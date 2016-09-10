@@ -12,7 +12,7 @@
 	
 ## （三）Core Class
 
-[MGJAwesomeCommand](http://gitlab.mogujie.org/payfront/AwesomeCommand/raw/develop/AwesomeCommand/Classes/MGJAwesomeCommand.m)
+[MGJAwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/MGJAwesomeCommand.m)
 
 组件的基础类，提供了多种调用方式，方便对RAC不熟悉的同学，也可以玩转RAC
 
@@ -161,7 +161,7 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 #### 3. RAC用法
 假设我们有一个这样的场景
 <div align=center>
-<img src="http://s17.mogucdn.com/p1/160829/idid_ie4wkndcmnstgzdbmezdambqgqyde_699x507.gif
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif
 " width = "400" height = "300" alt="" />
 </div>
 
