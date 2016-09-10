@@ -469,15 +469,10 @@ AwesomeCommand的驱动是依靠`RACSignal`，但是除了复杂的场景外—�
 
 
 ## Author
-wentong, wentong@meili-inc.com,
-
 senmiao, senmiao@meili-inc.com,
-
-zhanlu, zhanlu@meili-inc.com.
-
 ## Issue
 
-最后如果你有疑问，请TT联系 `@senmiao` or `@zhanlu`
+最后如果你有疑问，请Issue
 
 ## License
 
