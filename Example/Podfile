@@ -1,0 +1,41 @@
+# 三方库framework源，注释该行即可使用源码
+#source 'http://gitlab.mogujie.org/ios-team/3rdpartyframeworkspec.git'
+#source 'http://gitlab.mogujie.org/ios-team/mgjpodspec-framework.git'
+
+source 'http://gitlab.mogujie.org/ios-team/mgjpodspecs.git'
+source 'http://gitlab.mogujie.org/ios-team/cocoapods-official-specs-mirror.git'
+
+# IM 源
+source 'http://gitlab.mogujie.org/im/IMPodSpecs.git'
+
+pre_install do
+    system("sed -i '' '/UITextField/d' Pods/BlocksKit/BlocksKit/BlocksKit+UIKit.h")
+    system('rm -f Pods/BlocksKit/BlocksKit/UIKit/UITextField+BlocksKit.h')
+    system('rm -f Pods/BlocksKit/BlocksKit/UIKit/UITextField+BlocksKit.m')
+end
+
+platform :ios, '8.0'
+
+# use_frameworks!
+
+target 'AwesomeCommand_Example' do
+  pod 'AwesomeCommand', :path => '../'
+
+  pod 'MWP-SDK-iOS', '~> 0.2.14'
+  pod 'MGJAppInfo', '~> 0.1.2'
+# pod 'MGJFoundation', '~> 0.3.13'
+end
+  target 'AwesomeCommand_Tests' do
+  pod 'AwesomeCommand', :path => '../'
+  pod 'MGJUnitTest'
+  pod 'MWP-SDK-iOS', '~> 0.2.14'
+  pod 'MGJAppInfo', '~> 0.1.2'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ENABLE_BITCODE'] ||= 'NO'
+        end
+    end
+end

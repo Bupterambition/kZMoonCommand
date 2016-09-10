@@ -1,0 +1,29 @@
+{
+    "name": "AwesomeCommand",
+    "version": "0.1.6-rc.5",
+    "summary": "AwesomeCommand",
+    "description": "An awesome command for async operation.",
+    "homepage": "http://gitlab.mogujie.org/payfront/AwesomeCommand",
+    "license": {
+        "type": "MIT",
+        "file": "LICENSE"
+    },
+    "authors": {
+        "wentong": "wentong@meili-inc.com",
+        "senmmiao": "senmiao@meili-inc.com",
+        "zhanlu": "zhanlu@meili-inc.com"
+    },
+    "source": {
+        "git": "http://gitlab.mogujie.org/payfront/AwesomeCommand.git",
+        "tag": "0.1.6-rc.5"
+    },
+    "platforms": {
+        "ios": "7.0"
+    },
+    "source_files": "AwesomeCommand/Classes/**/*",
+    "dependencies": {
+        "ReactiveCocoa": [
+            "2.5"
+        ]
+    }
+}

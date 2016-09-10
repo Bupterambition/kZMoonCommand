@@ -1,0 +1,32 @@
+#!/bin/sh
+function confound() {
+    cd $1
+    filelist=`ls`
+    for file in $filelist
+    do
+        echo $file
+        if test -f $file 
+        then
+            FILE=$file;
+            if [ "${FILE#*.}" == "h" ]
+            then
+                md5Value=`md5 -q $file`
+                echo $file
+                chmod 777 $file 
+                line=`grep -n  "@interface.*:" $file|awk -F : '{print $1}'`
+                # sed -i -E "" "s/@interface.*:/__attribute__((objc_runtime_name(\""$md5Value"\"))) @interface\s*\w+.*:#g" $file
+                awk "NR==($line){print \"__attribute__((objc_runtime_name()))\"} {print}" $file 1<>$file
+                sed -i "" "s/__attribute__((objc_runtime_name()))/__attribute__((objc_runtime_name(\""$md5Value"\")))/g" $file
+                sed -i "" "s/@protocol/__attribute__((objc_runtime_name(\""$md5Value"\"))) @protocol/g" $file
+            fi
+        fi
+        if test -d $file 
+        then
+            echo $file
+            confound $file
+        fi
+    done
+    cd ..
+}
+
+confound $(pwd)
