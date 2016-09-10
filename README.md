@@ -161,8 +161,7 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 #### 3. RAC用法
 假设我们有一个这样的场景
 <div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif
-" width = "400" height = "300" alt="" />
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif" width = "400" height = "300" alt="" />
 </div>
 
 
