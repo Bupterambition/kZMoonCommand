@@ -1,21 +1,19 @@
 {
     "name": "AwesomeCommand",
-    "version": "0.1.6-rc.5",
+    "version": "0.1.0",
     "summary": "AwesomeCommand",
     "description": "An awesome command for async operation.",
-    "homepage": "http://gitlab.mogujie.org/payfront/AwesomeCommand",
+    "homepage": "https://github.com/Bupterambition/AwesomeCommand",
     "license": {
         "type": "MIT",
         "file": "LICENSE"
     },
     "authors": {
-        "wentong": "wentong@meili-inc.com",
-        "senmmiao": "senmiao@meili-inc.com",
-        "zhanlu": "zhanlu@meili-inc.com"
+        "senmmiao": "senmiao@meili-inc.com"
     },
     "source": {
-        "git": "http://gitlab.mogujie.org/payfront/AwesomeCommand.git",
-        "tag": "0.1.6-rc.5"
+        "git": "https://github.com/Bupterambition/AwesomeCommand.git",
+        "tag": "0.1.0"
     },
     "platforms": {
         "ios": "7.0"

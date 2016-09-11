@@ -2,7 +2,7 @@
 //  MGJAwesomeCommand+ExecQueue.h
 //  Pods
 //
-//  Created by Derek Chen on 8/30/16.
+//  Created by Senmiao on 8/30/16.
 //
 //
 

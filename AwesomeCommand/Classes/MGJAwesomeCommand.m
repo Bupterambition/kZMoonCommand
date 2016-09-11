@@ -1,5 +1,5 @@
 //
-// Created by Wentong on 16/5/31.
+// Created by Senmiao on 16/5/31.
 //
 
 #import "MGJAwesomeCommand.h"
@@ -166,7 +166,7 @@
     if (_callbackQueue != callbackQueue) {
         _callbackQueue = callbackQueue;
         if (_callbackQueue) {
-            _callbackScheduler = [[RACQueueScheduler alloc] initWithName:[self getCallbackSchedulerName] queue:_callbackQueue];
+            _callbackScheduler = [[RACTargetQueueScheduler alloc] initWithName:[self getCallbackSchedulerName] targetQueue:_callbackQueue];
         } else {
             _callbackScheduler = nil;
         }
@@ -174,7 +174,7 @@
 }
 
 - (RACScheduler *)callbackScheduler {
-	_callbackScheduler = [[RACQueueScheduler alloc] initWithName:[self getCallbackSchedulerName] queue:self.callbackQueue];
+	_callbackScheduler = [[RACTargetQueueScheduler alloc] initWithName:[self getCallbackSchedulerName] targetQueue:self.callbackQueue];
 	return _callbackScheduler;
 }
 

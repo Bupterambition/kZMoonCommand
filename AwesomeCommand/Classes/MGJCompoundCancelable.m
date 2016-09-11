@@ -2,7 +2,7 @@
 //  MGJCompoundCancelable.m
 //  Pods
 //
-//  Created by Derek Chen on 9/1/16.
+//  Created by Senmiao   on 9/1/16.
 //
 //
 

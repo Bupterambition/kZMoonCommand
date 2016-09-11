@@ -47,9 +47,6 @@
 //      [self testRequestCMD];  //测试excute执行
       [self testRequestCMDwithSignal];//测试signal执行
 //      [self testMutilThread];//测试多线程安全
-    
-    // MWP Test
-//    [self test4MWP];
 }
 
 - (void)didReceiveMemoryWarning {

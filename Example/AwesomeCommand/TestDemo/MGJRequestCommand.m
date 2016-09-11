@@ -21,7 +21,8 @@
 - (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
     NSLog(@"开始执行 Command Request");
     NSLog(@"current thread:__%@__",[NSThread currentThread]);
-    [result onNext:@"requestCMD"];
+    [result onNext:@"requestCMD1"];
+    [result onNext:@"requestCMD2"];
     [result onComplete];
     NSOperation *disposeOperation = [NSOperation new];
     return [[MGJBlockCancelable alloc] initWithBlock:^{

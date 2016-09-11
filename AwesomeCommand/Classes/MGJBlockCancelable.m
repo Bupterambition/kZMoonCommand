@@ -1,5 +1,5 @@
 //
-// Created by Wentong on 16/5/31.
+// Created by Senmiao on 16/5/31.
 //
 
 #import "MGJBlockCancelable.h"
