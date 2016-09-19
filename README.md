@@ -5,6 +5,257 @@
 [![License](https://img.shields.io/cocoapods/l/AwesomeCommand.svg?style=flat)](http://cocoapods.org/pods/AwesomeCommand)
 [![Platform](https://img.shields.io/cocoapods/p/AwesomeCommand.svg?style=flat)](http://cocoapods.org/pods/AwesomeCommand)
 
+
+* [中文版本](#中文版)
+
+## （1）Introduction
+
+AwesomeCommand is inspired **ReactiveCocoa** . As your App grows, your code will lead to an **accumulation** of business logic .After over time, a lot of overlap with the business logic result in confusing code. Based on this requirement, we write a new  command in order to **ignore the confuse thread progress only consider the final result**, so each business logic component can be written as a Signal chain, only need to manage the chain afterwards. At the same time, we do a lot AwesomeCommand **thread optimized** so that execution thread and callback thread completely separated, while ensuring the security thread, so external callers only need to be concerned about the relationship between the business logic does not require threading issues.
+##	 （2）Install
+	pod 'AwesomeCommand'
+	
+## （3）Core Class
+
+[MGJAwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/MGJAwesomeCommand.m)
+
+Base Class of AwesomeCommand.It offers a variety of ways to call without the knowledge of ReactiveCocoa.
+
+
+## （4）Usage
+
+MGJAwesomeCommand is an atomic base class offerring a lots of method .
+
+#### 1. Base Usage－Inherit MGJAwesomeCommand,Overwrite run method
+
+
+```
+// MGJRequestCommand.h
+#import <AwesomeCommand/MGJAwesomeCommand.h>
+
+@interface MGJRequestCommand : MGJAwesomeCommand
+@property (nonatomic, copy) NSDictionary *param;//执行command需要的参数
+@end
+```
+
+```
+// MGJRequestCommand.m
+
+#import "MGJRequestCommand.h"
+#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+
+@implementation MGJRequestCommand
+
+@synthesize excuteQueue = _excuteQueue;
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+    	// assign the excuting queue inside of class
+        _excuteQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    }
+    return self;
+}
+- (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
+    // Logic 
+    NSLog(@"Command Request");
+    NSLog(@"current thread:__%@__",[NSThread currentThread]);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [result onNext:self.param];  // send the result of Network to caller
+        [result onComplete];  // should write after sending result .It marked the end of this command 
+    });
+    NSOperation *disposeOperation = [NSOperation new];
+    return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+        // something to compose
+        // Example
+        [disposeOperation cancel];
+    }];
+}
+@end
+```
+```
+// the way of Block，Awesomecommand will retain block，so you should manage the life of var in block。
+requestCMD = [[MGJRequestCommand alloc] init];
+requestCMD.param = @{"bankName":@"CCB"};
+id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+        // call back here
+        // the current thread is the thread of call executeWithBlock：
+    }];
+
+```
+```
+//the way of Callback object，awesomecommand won't retain callback object，so the callback object should be managed by caller.
+@Interface MGJAwesomeCallbackViewModel()<MGJAwesomeCallback>
+@property (nonatomic, strong) MGJRequestCommand *requestCMD;
+@end
+
+@implementation MGJAwesomeCallbackViewModel
+
+- (void)onNext:(MGJAwesomeCommand *)command AndData:(id)data{
+
+}
+- (void)onComplete:(MGJAwesomeCommand *)command {
+
+}
+- (void)onError:(MGJAwesomeCommand *)command AndError:(NSError *)error {
+
+}
+- (void)executeRequestCMD {
+   self.requestCMD.param = @{@"argu":@"Awesome"};
+   [self.requestCMD executeWithCallback:self];
+}
+```
+#### 2. The way of Exec block使用姿势
+
+`you need not to overwrite run: method `
+
+```
+//MGJRequestCommand.h
+#import <AwesomeCommand/MGJAwesomeCommand.h>
+
+@interface MGJRequestCommand : MGJAwesomeCommand
+
+@end
+```
+
+```
+//MGJRequestCommand.m
+
+#import "MGJRequestCommand.h"
+#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+
+@implementation MGJRequestCommand
+
+@synthesize excuteQueue = _excuteQueue;
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+    	// assign the excuting queue inside of class
+        _excuteQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    }
+    return self;
+}
+
+@end
+```
+```
+//main.m
+
+requestCMD = [[MGJRequestCommand alloc] init];
+requestCMD.excuteBlock = ^(id<MGJAwesomeResult> result){
+        NSLog(@" Command Request");
+        NSLog(@"current thread:__%@__",[NSThread currentThread]);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [result onNext:@"requestCMD"];
+            [result onComplete];
+        });
+        NSOperation *disposeOperation = [NSOperation new];
+        return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+            //something to compose
+            //Example
+            [disposeOperation cancel];
+        }];
+    };
+id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+        // call back here
+        // the current thread is the thread of call executeWithBlock：
+    }];
+
+```
+#### 3. The way of RAC
+Assuming a situation shown below
+<div align=center>
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif" width = "400" height = "300" alt="" />
+</div>
+
+Assuming that we have six diffent tasks to Operate,but there is quite a bit of inter-dependence among these tasks.For instance,`3` depends on the completion of `1 and 2`.`0`depends on the completion of`3 and  4`,final output depends on the completion of `0 and 5`.Such a complicated diagram with a traditional logic code to write will certainly be very confusing ,even considering the diffence between each callback thread and excuting thread , the program  will be more complex.
+
+if you use AwesomeCommand,it should like this:
+
+```
+  RACSignal *signal_0 = [requestCMD createSignal];
+
+  RACSignal *signal_1 = [self.firstCMD createSignal];
+
+  secondCMD = [[MGJSecondCommand alloc] init];
+
+  RACSignal *signal_2 = [secondCMD createSignal];
+
+  thirdCMD = [[MGJThirdCommand alloc] init];
+
+  RACSignal *signal_3 = [thirdCMD createSignal];
+
+  fourthCMD = [[MGJFourthCommand alloc] init];
+
+  RACSignal *signal_4 = [fourthCMD createSignal];
+
+  fifthCMD = [[MGJFifthCommand alloc] init];
+
+  RACSignal *signal_5 = [fifthCMD createSignal];
+
+  RACSignal *combine1_2 = [signal_1 combineLatestWith:signal_2];
+  RACSignal *then12_3 = [combine1_2 then:^RACSignal * {
+    return signal_3;
+  }];
+  RACSignal *combine3_4 = [then12_3 combineLatestWith:signal_4];
+  RACSignal *then34_0 = [combine3_4 then:^RACSignal * {
+    return signal_0;
+  }];
+  [[RACSignal combineLatest:@[ then34_0, signal_5 ]
+                     reduce:^id(NSNumber *num1, NSNumber *num2) {
+                       return @(num1.integerValue + num2.integerValue);
+                     }] subscribeNext:^(id x) {
+    NSLog(@"final value is:______%ld______", [x integerValue]);
+  }];
+
+```
+
+#### 4. More instance
+
+Clone the repo 
+
+
+
+## （5）Cancel
+
+As atomic based class, AwesomeCommand should be inherited of subclass,so the subclass is the context by itself.
+
+##### Manual cancel
+
+```
+id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+        
+}];
+    
+[cancelObject_one cancel];
+
+```
+
+##### Auto cancel
+
+```
+//MGJAwesomeCommand.m
+
+- (void)dealloc {
+    [self cancel];
+}
+
+```
+
+## Author
+senmiao, bupterambition@gmail.com
+## Issue
+
+If you have any issue of this component,please contact me
+
+## License
+
+AwesomeCommand is available under the MIT license. See the LICENSE file for more info.
+
+
+## <a id="中文版"></a>中文版
+
+
 ## （一）组件介绍
 随着业务的发展，越来越多的业务逻辑堆积到一块，日积月累后，很多业务逻辑会交叠在一起，导致后续整理的时候`十分混乱`，基于这个需求，我们重构command组件，整体是基于`ReactiveCocoa`，这样的话不需要考虑调用顺序，只需要知道考虑结果，这样每个业务逻辑可以写成一条Signal链，后续只需要对`链`进行管理就可以。同时，我们对AwesomeCommand的`线程`做了很大优化，使得`执行线程`和`回调线程`完全分离，同时保证了`线程安全`，这样外部调用者就只需要关系业务逻辑`不需要关心线程`问题。
 ##	 （二）安装
@@ -477,3 +728,4 @@ senmiao, senmiao@meili-inc.com,
 ## License
 
 AwesomeCommand is available under the MIT license. See the LICENSE file for more info.
+
