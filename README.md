@@ -104,7 +104,7 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
    [self.requestCMD executeWithCallback:self];
 }
 ```
-#### 2. The way of Exec block使用姿势
+#### 2. The way of Exec block
 
 `you need not to overwrite run: method `
 
