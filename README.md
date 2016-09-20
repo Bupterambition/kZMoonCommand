@@ -33,7 +33,7 @@ MGJAwesomeCommand is an atomic base class offerring a lots of method .
 #import <AwesomeCommand/MGJAwesomeCommand.h>
 
 @interface MGJRequestCommand : MGJAwesomeCommand
-@property (nonatomic, copy) NSDictionary *param;//执行command需要的参数
+@property (nonatomic, copy) NSDictionary *param;
 @end
 ```
 
