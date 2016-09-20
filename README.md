@@ -1,5 +1,10 @@
 # AwesomeCommand
 
+
+<div align=center>
+<img src="http://moguimg.u.qiniudn.com/p1/160920/idid_ie4dsmzqmiztszbrmizdambqgiyde_1711x985.png" width = "600" height = "350" alt="代码风格的两三事儿" />
+</div>
+
 [![CI Status](http://img.shields.io/travis/wentong/AwesomeCommand.svg?style=flat)](https://travis-ci.org/wentong/AwesomeCommand)
 [![Version](https://img.shields.io/cocoapods/v/AwesomeCommand.svg?style=flat)](http://cocoapods.org/pods/AwesomeCommand)
 [![License](https://img.shields.io/cocoapods/l/AwesomeCommand.svg?style=flat)](http://cocoapods.org/pods/AwesomeCommand)
