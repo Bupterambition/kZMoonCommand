@@ -2,7 +2,7 @@
 
 
 <div align=center>
-<img src="http://moguimg.u.qiniudn.com/p1/160920/idid_ie4dsmzqmiztszbrmizdambqgiyde_1711x985.png" width = "600" height = "350" alt="代码风格的两三事儿" />
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand.png" width = "600" height = "350" alt="" />
 </div>
 
 [![CI Status](http://img.shields.io/travis/wentong/AwesomeCommand.svg?style=flat)](https://travis-ci.org/wentong/AwesomeCommand)
