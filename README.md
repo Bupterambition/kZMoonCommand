@@ -170,7 +170,7 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 #### 3. The way of RAC
 Assuming a situation shown below
 <div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif" width = "400" height = "300" alt="" />
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Demo.gif" width = "400" height = "300" alt="" />
 </div>
 
 Assuming that we have six diffent tasks to Operate,but there is quite a bit of inter-dependence among these tasks.For instance,`3` depends on the completion of `1 and 2`.`0`depends on the completion of`3 and  4`,final output depends on the completion of `0 and 5`.Such a complicated diagram with a traditional logic code to write will certainly be very confusing ,even considering the diffence between each callback thread and excuting thread , the program  will be more complex.
