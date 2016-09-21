@@ -2,7 +2,7 @@
 
 
 <div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand.png" width = "600" height = "350" alt="" />
+<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand.png" width = "1200" height = "450" alt="" />
 </div>
 
 [![CI Status](http://img.shields.io/travis/wentong/AwesomeCommand.svg?style=flat)](https://travis-ci.org/wentong/AwesomeCommand)
