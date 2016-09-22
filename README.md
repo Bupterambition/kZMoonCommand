@@ -13,6 +13,13 @@
 
 * [中文版本](#中文版)
 
+## based on 
+
+<div align=center>
+<img src="https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/Logo/header.png"  />
+</div>
+
+
 ## （1）Introduction
 
 AwesomeCommand is inspired **ReactiveCocoa** . As your App grows, your code will lead to an **accumulation** of business logic .After over time, a lot of overlap with the business logic result in confusing code. Based on this requirement, we write a new  command in order to **ignore the confuse thread progress only consider the final result**, so each business logic component can be written as a Signal chain, only need to manage the chain afterwards. At the same time, we do a lot AwesomeCommand **thread optimized** so that execution thread and callback thread completely separated, while ensuring the security thread, so external callers only need to be concerned about the relationship between the business logic does not require threading issues.
