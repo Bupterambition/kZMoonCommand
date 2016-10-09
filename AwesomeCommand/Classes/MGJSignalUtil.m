@@ -89,6 +89,9 @@
 @implementation MGJSignalUtil
 
 + (RACSignal *)createSignal:(nonnull MGJAwesomeCommand *)command {
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init(&attr);
+    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
     pthread_mutex_t _mutex;
     const int result = pthread_mutex_init(&_mutex, NULL);
     NSCAssert(0 == result, @"Failed to initialize mutex with error %d.", result);

@@ -27,7 +27,6 @@ target 'AwesomeCommand_Example' do
 end
   target 'AwesomeCommand_Tests' do
   pod 'AwesomeCommand', :path => '../'
-  pod 'MGJUnitTest'
   pod 'MWP-SDK-iOS', '~> 0.2.14'
   pod 'MGJAppInfo', '~> 0.1.2'
 end
