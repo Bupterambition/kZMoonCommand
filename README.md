@@ -476,7 +476,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ## （五）上下文环境与Cancel
 
-AwesomeCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。具体的案例可以参考[MWPCommand](http://gitlab.mogujie.org/payfront/MWPCommand.git)。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
+AwesomeCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
 
 AwesomeCommand提供了手动Cancel与自动Cancel功能.
 ##### 手动cancel
