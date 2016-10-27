@@ -28,34 +28,34 @@ AwesomeCommand is inspired **ReactiveCocoa** . As your App grows, your code will
 	
 ## （3）Core Class
 
-[MGJAwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/MGJAwesomeCommand.m)
+[AwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/AwesomeCommand.m)
 
 Base Class of AwesomeCommand.It offers a variety of ways to call without the knowledge of ReactiveCocoa.
 
 
 ## （4）Usage
 
-MGJAwesomeCommand is an atomic base class offerring a lots of method .
+AwesomeCommand is an atomic base class offerring a lots of method .
 
-#### 1. Base Usage－Inherit MGJAwesomeCommand,Overwrite run method
+#### 1. Base Usage－Inherit AwesomeCommand,Overwrite run method
 
 
 ```objc
-// MGJRequestCommand.h
-#import <AwesomeCommand/MGJAwesomeCommand.h>
+// RequestCommand.h
+#import <AwesomeCommand/AwesomeCommand.h>
 
-@interface MGJRequestCommand : MGJAwesomeCommand
+@interface RequestCommand : AwesomeCommand
 @property (nonatomic, copy) NSDictionary *param;
 @end
 ```
 
 ```objc
-// MGJRequestCommand.m
+// RequestCommand.m
 
-#import "MGJRequestCommand.h"
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+#import "RequestCommand.h"
+#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
 
-@implementation MGJRequestCommand
+@implementation RequestCommand
 
 @synthesize excuteQueue = _excuteQueue;
 
@@ -67,7 +67,7 @@ MGJAwesomeCommand is an atomic base class offerring a lots of method .
     }
     return self;
 }
-- (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
+- (id<AwesomeCancelable>)run:(id<AwesomeResult>)result {
     // Logic 
     NSLog(@"Command Request");
     NSLog(@"current thread:__%@__",[NSThread currentThread]);
@@ -76,7 +76,7 @@ MGJAwesomeCommand is an atomic base class offerring a lots of method .
         [result onComplete];  // should write after sending result .It marked the end of this command 
     });
     NSOperation *disposeOperation = [NSOperation new];
-    return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+    return [DefaultAwesomeCancelable cancelableWithCancelBlock:^{
         // something to compose
         // Example
         [disposeOperation cancel];
@@ -86,9 +86,9 @@ MGJAwesomeCommand is an atomic base class offerring a lots of method .
 ```
 ```objc
 // the way of Block，Awesomecommand will retain block，so you should manage the life of var in block。
-requestCMD = [[MGJRequestCommand alloc] init];
+requestCMD = [[RequestCommand alloc] init];
 requestCMD.param = @{"bankName":@"CCB"};
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         // call back here
         // the current thread is the thread of call executeWithBlock：
     }];
@@ -96,19 +96,19 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ```
 ```objc
 //the way of Callback object，awesomecommand won't retain callback object，so the callback object should be managed by caller.
-@Interface MGJAwesomeCallbackViewModel()<MGJAwesomeCallback>
-@property (nonatomic, strong) MGJRequestCommand *requestCMD;
+@Interface AwesomeCallbackViewModel()<AwesomeCallback>
+@property (nonatomic, strong) RequestCommand *requestCMD;
 @end
 
-@implementation MGJAwesomeCallbackViewModel
+@implementation AwesomeCallbackViewModel
 
-- (void)onNext:(MGJAwesomeCommand *)command AndData:(id)data{
-
-}
-- (void)onComplete:(MGJAwesomeCommand *)command {
+- (void)onNext:(AwesomeCommand *)command AndData:(id)data{
 
 }
-- (void)onError:(MGJAwesomeCommand *)command AndError:(NSError *)error {
+- (void)onComplete:(AwesomeCommand *)command {
+
+}
+- (void)onError:(AwesomeCommand *)command AndError:(NSError *)error {
 
 }
 - (void)executeRequestCMD {
@@ -121,21 +121,21 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 `you need not to overwrite run: method `
 
 ```objc
-//MGJRequestCommand.h
-#import <AwesomeCommand/MGJAwesomeCommand.h>
+//RequestCommand.h
+#import <AwesomeCommand/AwesomeCommand.h>
 
-@interface MGJRequestCommand : MGJAwesomeCommand
+@interface RequestCommand : AwesomeCommand
 
 @end
 ```
 
 ```objc
-//MGJRequestCommand.m
+//RequestCommand.m
 
-#import "MGJRequestCommand.h"
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+#import "RequestCommand.h"
+#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
 
-@implementation MGJRequestCommand
+@implementation RequestCommand
 
 @synthesize excuteQueue = _excuteQueue;
 
@@ -153,8 +153,8 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ```objc
 //main.m
 
-requestCMD = [[MGJRequestCommand alloc] init];
-requestCMD.excuteBlock = ^(id<MGJAwesomeResult> result){
+requestCMD = [[RequestCommand alloc] init];
+requestCMD.excuteBlock = ^(id<AwesomeResult> result){
         NSLog(@" Command Request");
         NSLog(@"current thread:__%@__",[NSThread currentThread]);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -162,13 +162,13 @@ requestCMD.excuteBlock = ^(id<MGJAwesomeResult> result){
             [result onComplete];
         });
         NSOperation *disposeOperation = [NSOperation new];
-        return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+        return [DefaultAwesomeCancelable cancelableWithCancelBlock:^{
             //something to compose
             //Example
             [disposeOperation cancel];
         }];
     };
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         // call back here
         // the current thread is the thread of call executeWithBlock：
     }];
@@ -189,19 +189,19 @@ if you use AwesomeCommand,it should like this:
 
   RACSignal *signal_1 = [self.firstCMD createSignal];
 
-  secondCMD = [[MGJSecondCommand alloc] init];
+  secondCMD = [[SecondCommand alloc] init];
 
   RACSignal *signal_2 = [secondCMD createSignal];
 
-  thirdCMD = [[MGJThirdCommand alloc] init];
+  thirdCMD = [[ThirdCommand alloc] init];
 
   RACSignal *signal_3 = [thirdCMD createSignal];
 
-  fourthCMD = [[MGJFourthCommand alloc] init];
+  fourthCMD = [[FourthCommand alloc] init];
 
   RACSignal *signal_4 = [fourthCMD createSignal];
 
-  fifthCMD = [[MGJFifthCommand alloc] init];
+  fifthCMD = [[FifthCommand alloc] init];
 
   RACSignal *signal_5 = [fifthCMD createSignal];
 
@@ -235,7 +235,7 @@ As atomic based class, AwesomeCommand should be inherited of subclass,so the sub
 ##### Manual cancel
 
 ```objc
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         
 }];
     
@@ -246,7 +246,7 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ##### Auto cancel
 
 ```objc
-//MGJAwesomeCommand.m
+//AwesomeCommand.m
 
 - (void)dealloc {
     [self cancel];
@@ -275,34 +275,34 @@ AwesomeCommand is available under the MIT license. See the LICENSE file for more
 	
 ## （三）Core Class
 
-[MGJAwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/MGJAwesomeCommand.m)
+[AwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/AwesomeCommand.m)
 
 组件的基础类，提供了多种调用方式，方便对RAC不熟悉的同学，也可以玩转RAC
 
 
 
 ## （四）使用姿势
-MGJAwesomeCommand作为一个原子的基类，提供了多种使用方法
+AwesomeCommand作为一个原子的基类，提供了多种使用方法
 
-#### 1. 基本姿势－继承MGJAwesomeCommand,将逻辑写在run方法中
+#### 1. 基本姿势－继承AwesomeCommand,将逻辑写在run方法中
 
 
 ```objc
-// MGJRequestCommand.h
-#import <AwesomeCommand/MGJAwesomeCommand.h>
+// RequestCommand.h
+#import <AwesomeCommand/AwesomeCommand.h>
 
-@interface MGJRequestCommand : MGJAwesomeCommand
+@interface RequestCommand : AwesomeCommand
 @property (nonatomic, copy) NSDictionary *param;//执行command需要的参数
 @end
 ```
 
 ```objc
-// MGJRequestCommand.m
+// RequestCommand.m
 
-#import "MGJRequestCommand.h"
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+#import "RequestCommand.h"
+#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
 
-@implementation MGJRequestCommand
+@implementation RequestCommand
 
 @synthesize excuteQueue = _excuteQueue;
 
@@ -314,7 +314,7 @@ MGJAwesomeCommand作为一个原子的基类，提供了多种使用方法
     }
     return self;
 }
-- (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
+- (id<AwesomeCancelable>)run:(id<AwesomeResult>)result {
     // 逻辑需要写在这里
     NSLog(@"开始执行 Command Request");
     NSLog(@"current thread:__%@__",[NSThread currentThread]);
@@ -323,7 +323,7 @@ MGJAwesomeCommand作为一个原子的基类，提供了多种使用方法
         [result onComplete];  // 必须执行，标示Command执行完毕
     });
     NSOperation *disposeOperation = [NSOperation new];
-    return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+    return [DefaultAwesomeCancelable cancelableWithCancelBlock:^{
         // something to compose
         // Example
         [disposeOperation cancel];
@@ -333,9 +333,9 @@ MGJAwesomeCommand作为一个原子的基类，提供了多种使用方法
 ```
 ```objc
 // Block回调形式，Cmd会retain block，在block里请自行管理好持有对象的生命周期。
-requestCMD = [[MGJRequestCommand alloc] init];
+requestCMD = [[RequestCommand alloc] init];
 requestCMD.param = @{"bankName":@"CCB"};
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         // 获取回调
         // 这里回调的线程是在执行executeWithBlock：方法的线程中
     }];
@@ -343,19 +343,19 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ```
 ```objc
 // Callback object回调形式，Cmd不会retain callback object，这个对象的生命周期需要外部自己管理。
-@Interface MGJAwesomeCallbackViewModel()<MGJAwesomeCallback>
-@property (nonatomic, strong) MGJRequestCommand *requestCMD;
+@Interface AwesomeCallbackViewModel()<AwesomeCallback>
+@property (nonatomic, strong) RequestCommand *requestCMD;
 @end
 
-@implementation MGJAwesomeCallbackViewModel
+@implementation AwesomeCallbackViewModel
 
-- (void)onNext:(MGJAwesomeCommand *)command AndData:(id)data{
-
-}
-- (void)onComplete:(MGJAwesomeCommand *)command {
+- (void)onNext:(AwesomeCommand *)command AndData:(id)data{
 
 }
-- (void)onError:(MGJAwesomeCommand *)command AndError:(NSError *)error {
+- (void)onComplete:(AwesomeCommand *)command {
+
+}
+- (void)onError:(AwesomeCommand *)command AndError:(NSError *)error {
 
 }
 - (void)executeRequestCMD {
@@ -368,21 +368,21 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 `不需要重写run方法（不推荐）`
 
 ```objc
-//MGJRequestCommand.h
-#import <AwesomeCommand/MGJAwesomeCommand.h>
+//RequestCommand.h
+#import <AwesomeCommand/AwesomeCommand.h>
 
-@interface MGJRequestCommand : MGJAwesomeCommand
+@interface RequestCommand : AwesomeCommand
 
 @end
 ```
 
 ```objc
-//MGJRequestCommand.m
+//RequestCommand.m
 
-#import "MGJRequestCommand.h"
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+#import "RequestCommand.h"
+#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
 
-@implementation MGJRequestCommand
+@implementation RequestCommand
 
 @synthesize excuteQueue = _excuteQueue;
 
@@ -400,8 +400,8 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ```objc
 //main.m
 
-requestCMD = [[MGJRequestCommand alloc] init];
-requestCMD.excuteBlock = ^(id<MGJAwesomeResult> result){
+requestCMD = [[RequestCommand alloc] init];
+requestCMD.excuteBlock = ^(id<AwesomeResult> result){
         NSLog(@"开始执行 Command Request");
         NSLog(@"current thread:__%@__",[NSThread currentThread]);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -409,13 +409,13 @@ requestCMD.excuteBlock = ^(id<MGJAwesomeResult> result){
             [result onComplete];
         });
         NSOperation *disposeOperation = [NSOperation new];
-        return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+        return [DefaultAwesomeCancelable cancelableWithCancelBlock:^{
             //something to compose
             //Example
             [disposeOperation cancel];
         }];
     };
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         //获取回调
         //这里回调的线程是在执行executeWithBlock：方法的线程中
     }];
@@ -437,19 +437,19 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 
   RACSignal *signal_1 = [self.firstCMD createSignal];
 
-  secondCMD = [[MGJSecondCommand alloc] init];
+  secondCMD = [[SecondCommand alloc] init];
 
   RACSignal *signal_2 = [secondCMD createSignal];
 
-  thirdCMD = [[MGJThirdCommand alloc] init];
+  thirdCMD = [[ThirdCommand alloc] init];
 
   RACSignal *signal_3 = [thirdCMD createSignal];
 
-  fourthCMD = [[MGJFourthCommand alloc] init];
+  fourthCMD = [[FourthCommand alloc] init];
 
   RACSignal *signal_4 = [fourthCMD createSignal];
 
-  fifthCMD = [[MGJFifthCommand alloc] init];
+  fifthCMD = [[FifthCommand alloc] init];
 
   RACSignal *signal_5 = [fifthCMD createSignal];
 
@@ -476,13 +476,13 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 
 ## （五）上下文环境与Cancel
 
-AwesomeCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。具体的案例可以参考[MGJMWPCommand](http://gitlab.mogujie.org/payfront/MGJMWPCommand.git)。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
+AwesomeCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。具体的案例可以参考[MWPCommand](http://gitlab.mogujie.org/payfront/MWPCommand.git)。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
 
 AwesomeCommand提供了手动Cancel与自动Cancel功能.
 ##### 手动cancel
 
 ```objc
-id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         
 }];
     
@@ -491,10 +491,10 @@ id<MGJAwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<MG
 ```
 
 ##### 自动cancel
-自动cancel功能，我们是在MGJAwesomeCommand的dealloc中进行cancel
+自动cancel功能，我们是在AwesomeCommand的dealloc中进行cancel
 
 ```objc
-//MGJAwesomeCommand.m
+//AwesomeCommand.m
 
 - (void)dealloc {
     [self cancel];
@@ -518,7 +518,7 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 使用时我们只需要在初始化的时候指定一下需要进行逻辑执行的线程即可
 
 ```objc
-@implementation MGJRequestCommand
+@implementation RequestCommand
 @synthesize excuteQueue = _excuteQueue;
 - (instancetype)init {
     self = [super init];
@@ -532,9 +532,9 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 对于回调线程，调用方不需要关心，因为AwesomeCommand会捕获当前执行下面语句时的线程并在有回调时进行返回
 
 ```objc
-- (id<MGJAwesomeCancelable>)executeWithCallback:(id<MGJAwesomeCallback>)callback;
+- (id<AwesomeCancelable>)executeWithCallback:(id<AwesomeCallback>)callback;
 
-- (id<MGJAwesomeCancelable>)executeWithBlock:	(MGJAwesomeExcuteCallbaclBlock)callbackBlock;
+- (id<AwesomeCancelable>)executeWithBlock:	(AwesomeExcuteCallbaclBlock)callbackBlock;
 
 - (RACSignal *)createSignal;
 
@@ -543,17 +543,17 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 比如说你想写一个在子线程中跑逻辑在主线程中取回调的逻辑
 
 ```objc
-#import <AwesomeCommand/MGJAwesomeCommand.h>
+#import <AwesomeCommand/AwesomeCommand.h>
 
-@interface MGJFirstCommand : MGJAwesomeCommand
+@interface FirstCommand : AwesomeCommand
 
 @end
 
 _________________________________________________________________
 
-#import "MGJFirstCommand.h"
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
-@implementation MGJFirstCommand
+#import "FirstCommand.h"
+#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+@implementation FirstCommand
 
 @synthesize excuteQueue = _excuteQueue;
 
@@ -565,12 +565,12 @@ _________________________________________________________________
     return self;
 }
 
-- (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
+- (id<AwesomeCancelable>)run:(id<AwesomeResult>)result {
     NSLog(@"开始执行 Command 1,线程:%@",[NSThread currentThread]);
     [result onNext:@"1"];
     [result onComplete];
     NSOperation *disposeOperation = [NSOperation new];
-    return [MGJDefaultAwesomeCancelable cancelableWithCancelBlock:^{
+    return [DefaultAwesomeCancelable cancelableWithCancelBlock:^{
         //something to compose
         //Example
         [disposeOperation cancel];
@@ -580,17 +580,17 @@ _________________________________________________________________
 @end
 _________________________________________________________________
 
-@interface MGJViewController ()
-@property (nonatomic, strong) MGJFirstCommand *firstCMD;
+@interface ViewController ()
+@property (nonatomic, strong) FirstCommand *firstCMD;
 
 @end
 
-@implementation MGJViewController
+@implementation ViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.firstCMD = [[MGJFirstCommand alloc] init];
-  id<MGJAwesomeCancelable> cancelObject_two = [firstCMD executeWithBlock:^(id<MGJAwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+  self.firstCMD = [[FirstCommand alloc] init];
+  id<AwesomeCancelable> cancelObject_two = [firstCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
         //逻辑在子线程，回调在主线程
     }];
 ```
@@ -601,9 +601,9 @@ AwesomeCommand的驱动是依靠RACSignal的，因此我在创建这个驱动Sig
 
 ```objc
 
-@implementation MGJSignalUtil
+@implementation SignalUtil
 
-+ (RACSignal *)createSignal:(nonnull MGJAwesomeCommand *)command {
++ (RACSignal *)createSignal:(nonnull AwesomeCommand *)command {
     pthread_mutex_t _mutex;
     const int result = pthread_mutex_init(&_mutex, NULL);
     NSCAssert(0 == result, @"Failed to initialize mutex with error %d.", result);
@@ -614,10 +614,10 @@ AwesomeCommand的驱动是依靠RACSignal的，因此我在创建这个驱动Sig
         if (command && [command respondsToSelector:@selector(run:)]) {
             pthread_mutex_lock(&_mutex);
             
-            id<MGJAwesomeResult> result = [MGJAwesomeResultImpl resultWithSubscriber:subscriber];
+            id<AwesomeResult> result = [AwesomeResultImpl resultWithSubscriber:subscriber];
 
             [command setValue:@(YES) forKey:@"Executing"];
-            id<MGJAwesomeCancelable> cancelable = [command run:result];
+            id<AwesomeCancelable> cancelable = [command run:result];
             
             pthread_mutex_unlock(&_mutex);
             if (cancelable) {
