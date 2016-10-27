@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "40E177890E4920698E67525F07A919A8EA2BF334",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "07FA1E3EE16564FF4E73DEC163F397E43EA6171A" : 9223372036854775807,
+    "40E177890E4920698E67525F07A919A8EA2BF334" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "706DB086-1465-4427-BEA9-BD0E759F1ED9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "07FA1E3EE16564FF4E73DEC163F397E43EA6171A" : "CodeCoverageForXcode8GM\/",
+    "40E177890E4920698E67525F07A919A8EA2BF334" : "AwesomeCommand\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AwesomeCommand",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/AwesomeCommand.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gitlab.mogujie.org\/senmiao\/CodeCoverageForXcode8GM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07FA1E3EE16564FF4E73DEC163F397E43EA6171A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Bupterambition\/AwesomeCommand.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "40E177890E4920698E67525F07A919A8EA2BF334"
+    }
+  ]
+}

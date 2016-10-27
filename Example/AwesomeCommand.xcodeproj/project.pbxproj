@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3261FED7C8C2A73A25F49BBA /* libPods-AwesomeCommand_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4BEA704DB0E4C340FE9E07 /* libPods-AwesomeCommand_Tests.a */; };
+		0A4F8F9A4E39C569F2F5ACA6 /* Pods_AwesomeCommand_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF846B4E0B4A0C477318CF6B /* Pods_AwesomeCommand_Tests.framework */; };
+		4086AFDAC6A995AB0B2544D0 /* Pods_AwesomeCommand_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9C94998D168E4859E13D52 /* Pods_AwesomeCommand_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* MGJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* MGJAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* MGJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* MGJViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -22,22 +21,17 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		8D14083B1D66F5FD00D2E642 /* MGJMWPCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D14083A1D66F5FD00D2E642 /* MGJMWPCommand.m */; };
-		8D1C62B51D6F065D0073EDAE /* MGJMWPRequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C62B41D6F065D0073EDAE /* MGJMWPRequestInfo.m */; };
-		8D1C62B81D6FF3430073EDAE /* MGJMWPPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C62B71D6FF3430073EDAE /* MGJMWPPet.m */; };
-		8D436BE51D728AC600D8AD82 /* MGJMWPPetCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D436BE41D728AC600D8AD82 /* MGJMWPPetCmd.m */; };
-		8D436BE81D7298F300D8AD82 /* MGJViewController+MWP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D436BE71D7298F300D8AD82 /* MGJViewController+MWP.m */; };
-		8D436BEB1D72B26C00D8AD82 /* MGJMWPResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D436BEA1D72B26C00D8AD82 /* MGJMWPResult.m */; };
-		90E8E0C05438424BF74FC4CC /* libPods-AwesomeCommand_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E8B668344D8A8C178E52D /* libPods-AwesomeCommand_Example.a */; };
-		C4220F981D619C2D00E43458 /* MGJRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220F971D619C2D00E43458 /* MGJRequestCommand.m */; };
-		C4220F9D1D61ABD100E43458 /* MGJAwesomeCallbackObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220F9C1D61ABD100E43458 /* MGJAwesomeCallbackObject.m */; };
-		C4220FA11D61B86500E43458 /* MGJFirstCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FA01D61B86500E43458 /* MGJFirstCommand.m */; };
-		C4220FA41D61B87800E43458 /* MGJSecondCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FA31D61B87800E43458 /* MGJSecondCommand.m */; };
-		C4220FA71D61BEAA00E43458 /* MGJThirdCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FA61D61BEAA00E43458 /* MGJThirdCommand.m */; };
-		C4220FAA1D61BEBC00E43458 /* MGJFourthCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FA91D61BEBC00E43458 /* MGJFourthCommand.m */; };
-		C4220FAD1D61C87700E43458 /* MGJFifthCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FAC1D61C87700E43458 /* MGJFifthCommand.m */; };
-		C4220FB11D61D34D00E43458 /* MGJTestAwesomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C4220FB01D61D34D00E43458 /* MGJTestAwesomeResult.m */; };
-		C4AF606C1D65BE64006DA624 /* MGJMultibleCommandForTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AF606B1D65BE64006DA624 /* MGJMultibleCommandForTest.m */; };
+		C462A7971DC2034A00306DE5 /* FifthCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A78C1DC2034A00306DE5 /* FifthCommand.m */; };
+		C462A7981DC2034A00306DE5 /* FirstCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A78E1DC2034A00306DE5 /* FirstCommand.m */; };
+		C462A7991DC2034A00306DE5 /* FourthCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7901DC2034A00306DE5 /* FourthCommand.m */; };
+		C462A79A1DC2034A00306DE5 /* RequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7921DC2034A00306DE5 /* RequestCommand.m */; };
+		C462A79B1DC2034A00306DE5 /* SecondCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7941DC2034A00306DE5 /* SecondCommand.m */; };
+		C462A79C1DC2034A00306DE5 /* ThirdCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7961DC2034A00306DE5 /* ThirdCommand.m */; };
+		C462A79F1DC2035300306DE5 /* MultibleCommandForTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A79E1DC2035300306DE5 /* MultibleCommandForTest.m */; };
+		C462A7A21DC2036100306DE5 /* TestAwesomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7A11DC2036100306DE5 /* TestAwesomeResult.m */; };
+		C462A7A51DC2037F00306DE5 /* AwesomeCallbackObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7A41DC2037F00306DE5 /* AwesomeCallbackObject.m */; };
+		C462A7AA1DC2039D00306DE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7A71DC2039D00306DE5 /* AppDelegate.m */; };
+		C462A7AB1DC2039D00306DE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C462A7A91DC2039D00306DE5 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +47,8 @@
 /* Begin PBXFileReference section */
 		007E67DBB6602AF2211B23BF /* Pods-AwesomeCommand_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeCommand_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeCommand_Tests/Pods-AwesomeCommand_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		403D8E7FA6EBB77F08DF53EC /* Pods-AwesomeCommand_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeCommand_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeCommand_Example/Pods-AwesomeCommand_Example.release.xcconfig"; sourceTree = "<group>"; };
-		449E8B668344D8A8C178E52D /* libPods-AwesomeCommand_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeCommand_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47232CA8358FDE2CADAA659B /* Pods-AwesomeCommand_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeCommand_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeCommand_Example/Pods-AwesomeCommand_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5E9C94998D168E4859E13D52 /* Pods_AwesomeCommand_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeCommand_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* AwesomeCommand_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeCommand_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,10 +57,6 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* AwesomeCommand-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AwesomeCommand-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* MGJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGJAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* MGJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGJAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* MGJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGJViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* MGJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGJViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* AwesomeCommand_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeCommand_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -75,38 +65,30 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8D1408391D66F5FD00D2E642 /* MGJMWPCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMWPCommand.h; sourceTree = "<group>"; };
-		8D14083A1D66F5FD00D2E642 /* MGJMWPCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMWPCommand.m; sourceTree = "<group>"; };
-		8D1C62B31D6F065D0073EDAE /* MGJMWPRequestInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMWPRequestInfo.h; sourceTree = "<group>"; };
-		8D1C62B41D6F065D0073EDAE /* MGJMWPRequestInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMWPRequestInfo.m; sourceTree = "<group>"; };
-		8D1C62B61D6FF3430073EDAE /* MGJMWPPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMWPPet.h; sourceTree = "<group>"; };
-		8D1C62B71D6FF3430073EDAE /* MGJMWPPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMWPPet.m; sourceTree = "<group>"; };
-		8D436BE31D728AC600D8AD82 /* MGJMWPPetCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMWPPetCmd.h; sourceTree = "<group>"; };
-		8D436BE41D728AC600D8AD82 /* MGJMWPPetCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMWPPetCmd.m; sourceTree = "<group>"; };
-		8D436BE61D7298F300D8AD82 /* MGJViewController+MWP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MGJViewController+MWP.h"; sourceTree = "<group>"; };
-		8D436BE71D7298F300D8AD82 /* MGJViewController+MWP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MGJViewController+MWP.m"; sourceTree = "<group>"; };
-		8D436BE91D72B26C00D8AD82 /* MGJMWPResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMWPResult.h; sourceTree = "<group>"; };
-		8D436BEA1D72B26C00D8AD82 /* MGJMWPResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMWPResult.m; sourceTree = "<group>"; };
 		8F08502846F109F279CBC742 /* Pods-AwesomeCommand_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeCommand_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeCommand_Tests/Pods-AwesomeCommand_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C4220F961D619C2D00E43458 /* MGJRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJRequestCommand.h; sourceTree = "<group>"; };
-		C4220F971D619C2D00E43458 /* MGJRequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJRequestCommand.m; sourceTree = "<group>"; };
-		C4220F9B1D61ABD100E43458 /* MGJAwesomeCallbackObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJAwesomeCallbackObject.h; sourceTree = "<group>"; };
-		C4220F9C1D61ABD100E43458 /* MGJAwesomeCallbackObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJAwesomeCallbackObject.m; sourceTree = "<group>"; };
-		C4220F9F1D61B86500E43458 /* MGJFirstCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJFirstCommand.h; sourceTree = "<group>"; };
-		C4220FA01D61B86500E43458 /* MGJFirstCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJFirstCommand.m; sourceTree = "<group>"; };
-		C4220FA21D61B87800E43458 /* MGJSecondCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJSecondCommand.h; sourceTree = "<group>"; };
-		C4220FA31D61B87800E43458 /* MGJSecondCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJSecondCommand.m; sourceTree = "<group>"; };
-		C4220FA51D61BEAA00E43458 /* MGJThirdCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJThirdCommand.h; sourceTree = "<group>"; };
-		C4220FA61D61BEAA00E43458 /* MGJThirdCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJThirdCommand.m; sourceTree = "<group>"; };
-		C4220FA81D61BEBC00E43458 /* MGJFourthCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJFourthCommand.h; sourceTree = "<group>"; };
-		C4220FA91D61BEBC00E43458 /* MGJFourthCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJFourthCommand.m; sourceTree = "<group>"; };
-		C4220FAB1D61C87700E43458 /* MGJFifthCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJFifthCommand.h; sourceTree = "<group>"; };
-		C4220FAC1D61C87700E43458 /* MGJFifthCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJFifthCommand.m; sourceTree = "<group>"; };
-		C4220FAF1D61D34D00E43458 /* MGJTestAwesomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJTestAwesomeResult.h; sourceTree = "<group>"; };
-		C4220FB01D61D34D00E43458 /* MGJTestAwesomeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJTestAwesomeResult.m; sourceTree = "<group>"; };
-		C4AF606A1D65BE64006DA624 /* MGJMultibleCommandForTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJMultibleCommandForTest.h; sourceTree = "<group>"; };
-		C4AF606B1D65BE64006DA624 /* MGJMultibleCommandForTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJMultibleCommandForTest.m; sourceTree = "<group>"; };
-		EE4BEA704DB0E4C340FE9E07 /* libPods-AwesomeCommand_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeCommand_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF846B4E0B4A0C477318CF6B /* Pods_AwesomeCommand_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeCommand_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C462A78B1DC2034A00306DE5 /* FifthCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthCommand.h; sourceTree = "<group>"; };
+		C462A78C1DC2034A00306DE5 /* FifthCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthCommand.m; sourceTree = "<group>"; };
+		C462A78D1DC2034A00306DE5 /* FirstCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstCommand.h; sourceTree = "<group>"; };
+		C462A78E1DC2034A00306DE5 /* FirstCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCommand.m; sourceTree = "<group>"; };
+		C462A78F1DC2034A00306DE5 /* FourthCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthCommand.h; sourceTree = "<group>"; };
+		C462A7901DC2034A00306DE5 /* FourthCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthCommand.m; sourceTree = "<group>"; };
+		C462A7911DC2034A00306DE5 /* RequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCommand.h; sourceTree = "<group>"; };
+		C462A7921DC2034A00306DE5 /* RequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCommand.m; sourceTree = "<group>"; };
+		C462A7931DC2034A00306DE5 /* SecondCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondCommand.h; sourceTree = "<group>"; };
+		C462A7941DC2034A00306DE5 /* SecondCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondCommand.m; sourceTree = "<group>"; };
+		C462A7951DC2034A00306DE5 /* ThirdCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdCommand.h; sourceTree = "<group>"; };
+		C462A7961DC2034A00306DE5 /* ThirdCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdCommand.m; sourceTree = "<group>"; };
+		C462A79D1DC2035300306DE5 /* MultibleCommandForTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultibleCommandForTest.h; sourceTree = "<group>"; };
+		C462A79E1DC2035300306DE5 /* MultibleCommandForTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultibleCommandForTest.m; sourceTree = "<group>"; };
+		C462A7A01DC2036100306DE5 /* TestAwesomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAwesomeResult.h; sourceTree = "<group>"; };
+		C462A7A11DC2036100306DE5 /* TestAwesomeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAwesomeResult.m; sourceTree = "<group>"; };
+		C462A7A31DC2037F00306DE5 /* AwesomeCallbackObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeCallbackObject.h; sourceTree = "<group>"; };
+		C462A7A41DC2037F00306DE5 /* AwesomeCallbackObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeCallbackObject.m; sourceTree = "<group>"; };
+		C462A7A61DC2039D00306DE5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C462A7A71DC2039D00306DE5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C462A7A81DC2039D00306DE5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C462A7A91DC2039D00306DE5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +99,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				90E8E0C05438424BF74FC4CC /* libPods-AwesomeCommand_Example.a in Frameworks */,
+				4086AFDAC6A995AB0B2544D0 /* Pods_AwesomeCommand_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +110,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				3261FED7C8C2A73A25F49BBA /* libPods-AwesomeCommand_Tests.a in Frameworks */,
+				0A4F8F9A4E39C569F2F5ACA6 /* Pods_AwesomeCommand_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +144,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				449E8B668344D8A8C178E52D /* libPods-AwesomeCommand_Example.a */,
-				EE4BEA704DB0E4C340FE9E07 /* libPods-AwesomeCommand_Tests.a */,
+				5E9C94998D168E4859E13D52 /* Pods_AwesomeCommand_Example.framework */,
+				BF846B4E0B4A0C477318CF6B /* Pods_AwesomeCommand_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,13 +154,11 @@
 			isa = PBXGroup;
 			children = (
 				C4220F951D619C0F00E43458 /* TestDemo */,
-				6003F59C195388D20070C39A /* MGJAppDelegate.h */,
-				6003F59D195388D20070C39A /* MGJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* MGJViewController.h */,
-				6003F5A6195388D20070C39A /* MGJViewController.m */,
-				8D436BE61D7298F300D8AD82 /* MGJViewController+MWP.h */,
-				8D436BE71D7298F300D8AD82 /* MGJViewController+MWP.m */,
+				C462A7A61DC2039D00306DE5 /* AppDelegate.h */,
+				C462A7A71DC2039D00306DE5 /* AppDelegate.m */,
+				C462A7A81DC2039D00306DE5 /* ViewController.h */,
+				C462A7A91DC2039D00306DE5 /* ViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -227,29 +207,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8D1408381D66F5DA00D2E642 /* MWPCmd */ = {
-			isa = PBXGroup;
-			children = (
-				8D1408391D66F5FD00D2E642 /* MGJMWPCommand.h */,
-				8D14083A1D66F5FD00D2E642 /* MGJMWPCommand.m */,
-				8D1C62B31D6F065D0073EDAE /* MGJMWPRequestInfo.h */,
-				8D1C62B41D6F065D0073EDAE /* MGJMWPRequestInfo.m */,
-				8D436BE91D72B26C00D8AD82 /* MGJMWPResult.h */,
-				8D436BEA1D72B26C00D8AD82 /* MGJMWPResult.m */,
-				8D436BE31D728AC600D8AD82 /* MGJMWPPetCmd.h */,
-				8D436BE41D728AC600D8AD82 /* MGJMWPPetCmd.m */,
-			);
-			path = MWPCmd;
-			sourceTree = "<group>";
-		};
 		C4220F951D619C0F00E43458 /* TestDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C4220F9B1D61ABD100E43458 /* MGJAwesomeCallbackObject.h */,
-				C4220F9C1D61ABD100E43458 /* MGJAwesomeCallbackObject.m */,
+				C462A7A31DC2037F00306DE5 /* AwesomeCallbackObject.h */,
+				C462A7A41DC2037F00306DE5 /* AwesomeCallbackObject.m */,
 				C4220F9E1D61B80C00E43458 /* Command */,
-				8D1C62B61D6FF3430073EDAE /* MGJMWPPet.h */,
-				8D1C62B71D6FF3430073EDAE /* MGJMWPPet.m */,
 			);
 			path = TestDemo;
 			sourceTree = "<group>";
@@ -257,7 +220,6 @@
 		C4220F9E1D61B80C00E43458 /* Command */ = {
 			isa = PBXGroup;
 			children = (
-				8D1408381D66F5DA00D2E642 /* MWPCmd */,
 				C4AF606F1D65BEB4006DA624 /* MultiCommand */,
 				C4AF606E1D65BE85006DA624 /* BindCommand */,
 				C4220FAE1D61D33500E43458 /* AwesomeResult */,
@@ -268,8 +230,8 @@
 		C4220FAE1D61D33500E43458 /* AwesomeResult */ = {
 			isa = PBXGroup;
 			children = (
-				C4220FAF1D61D34D00E43458 /* MGJTestAwesomeResult.h */,
-				C4220FB01D61D34D00E43458 /* MGJTestAwesomeResult.m */,
+				C462A7A01DC2036100306DE5 /* TestAwesomeResult.h */,
+				C462A7A11DC2036100306DE5 /* TestAwesomeResult.m */,
 			);
 			name = AwesomeResult;
 			sourceTree = "<group>";
@@ -277,18 +239,18 @@
 		C4AF606E1D65BE85006DA624 /* BindCommand */ = {
 			isa = PBXGroup;
 			children = (
-				C4220F961D619C2D00E43458 /* MGJRequestCommand.h */,
-				C4220F971D619C2D00E43458 /* MGJRequestCommand.m */,
-				C4220F9F1D61B86500E43458 /* MGJFirstCommand.h */,
-				C4220FA01D61B86500E43458 /* MGJFirstCommand.m */,
-				C4220FA21D61B87800E43458 /* MGJSecondCommand.h */,
-				C4220FA31D61B87800E43458 /* MGJSecondCommand.m */,
-				C4220FA51D61BEAA00E43458 /* MGJThirdCommand.h */,
-				C4220FA61D61BEAA00E43458 /* MGJThirdCommand.m */,
-				C4220FA81D61BEBC00E43458 /* MGJFourthCommand.h */,
-				C4220FA91D61BEBC00E43458 /* MGJFourthCommand.m */,
-				C4220FAB1D61C87700E43458 /* MGJFifthCommand.h */,
-				C4220FAC1D61C87700E43458 /* MGJFifthCommand.m */,
+				C462A78B1DC2034A00306DE5 /* FifthCommand.h */,
+				C462A78C1DC2034A00306DE5 /* FifthCommand.m */,
+				C462A78D1DC2034A00306DE5 /* FirstCommand.h */,
+				C462A78E1DC2034A00306DE5 /* FirstCommand.m */,
+				C462A78F1DC2034A00306DE5 /* FourthCommand.h */,
+				C462A7901DC2034A00306DE5 /* FourthCommand.m */,
+				C462A7911DC2034A00306DE5 /* RequestCommand.h */,
+				C462A7921DC2034A00306DE5 /* RequestCommand.m */,
+				C462A7931DC2034A00306DE5 /* SecondCommand.h */,
+				C462A7941DC2034A00306DE5 /* SecondCommand.m */,
+				C462A7951DC2034A00306DE5 /* ThirdCommand.h */,
+				C462A7961DC2034A00306DE5 /* ThirdCommand.m */,
 			);
 			name = BindCommand;
 			sourceTree = "<group>";
@@ -296,8 +258,8 @@
 		C4AF606F1D65BEB4006DA624 /* MultiCommand */ = {
 			isa = PBXGroup;
 			children = (
-				C4AF606A1D65BE64006DA624 /* MGJMultibleCommandForTest.h */,
-				C4AF606B1D65BE64006DA624 /* MGJMultibleCommandForTest.m */,
+				C462A79D1DC2035300306DE5 /* MultibleCommandForTest.h */,
+				C462A79E1DC2035300306DE5 /* MultibleCommandForTest.m */,
 			);
 			name = MultiCommand;
 			sourceTree = "<group>";
@@ -309,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "AwesomeCommand_Example" */;
 			buildPhases = (
+				A86D420CFFA28EDC7895437A /* [CP] Check Pods Manifest.lock */,
 				50238D5CBC9FD98FC280F593 /* [CP] Check Pods Manifest.lock */,
 				295218871032127D9CB86FA7 /* [CP] Check Pods Manifest.lock */,
 				482AE8E70CE677FD437FAF99 /* [CP] Check Pods Manifest.lock */,
@@ -337,6 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "AwesomeCommand_Tests" */;
 			buildPhases = (
+				587DA2684B7E76B14D9B556B /* [CP] Check Pods Manifest.lock */,
 				F7EF24873BC3295AB78F7ACE /* [CP] Check Pods Manifest.lock */,
 				B1294588857B22BFD161D561 /* [CP] Check Pods Manifest.lock */,
 				A40CC1CE53BF92325E139F26 /* [CP] Check Pods Manifest.lock */,
@@ -553,6 +517,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		587DA2684B7E76B14D9B556B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5CE599CD7C73437355A97A4E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,6 +620,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AwesomeCommand_Tests/Pods-AwesomeCommand_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86D420CFFA28EDC7895437A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B0100B03324DCED5EF71D1C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -755,24 +749,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D436BE81D7298F300D8AD82 /* MGJViewController+MWP.m in Sources */,
-				C4AF606C1D65BE64006DA624 /* MGJMultibleCommandForTest.m in Sources */,
-				C4220F981D619C2D00E43458 /* MGJRequestCommand.m in Sources */,
-				8D1C62B81D6FF3430073EDAE /* MGJMWPPet.m in Sources */,
-				6003F59E195388D20070C39A /* MGJAppDelegate.m in Sources */,
-				8D1C62B51D6F065D0073EDAE /* MGJMWPRequestInfo.m in Sources */,
-				C4220FB11D61D34D00E43458 /* MGJTestAwesomeResult.m in Sources */,
-				6003F5A7195388D20070C39A /* MGJViewController.m in Sources */,
+				C462A7AA1DC2039D00306DE5 /* AppDelegate.m in Sources */,
+				C462A79C1DC2034A00306DE5 /* ThirdCommand.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				8D436BE51D728AC600D8AD82 /* MGJMWPPetCmd.m in Sources */,
-				C4220FAD1D61C87700E43458 /* MGJFifthCommand.m in Sources */,
-				8D14083B1D66F5FD00D2E642 /* MGJMWPCommand.m in Sources */,
-				C4220FA71D61BEAA00E43458 /* MGJThirdCommand.m in Sources */,
-				C4220FA41D61B87800E43458 /* MGJSecondCommand.m in Sources */,
-				C4220F9D1D61ABD100E43458 /* MGJAwesomeCallbackObject.m in Sources */,
-				C4220FA11D61B86500E43458 /* MGJFirstCommand.m in Sources */,
-				8D436BEB1D72B26C00D8AD82 /* MGJMWPResult.m in Sources */,
-				C4220FAA1D61BEBC00E43458 /* MGJFourthCommand.m in Sources */,
+				C462A7991DC2034A00306DE5 /* FourthCommand.m in Sources */,
+				C462A7A51DC2037F00306DE5 /* AwesomeCallbackObject.m in Sources */,
+				C462A79A1DC2034A00306DE5 /* RequestCommand.m in Sources */,
+				C462A7AB1DC2039D00306DE5 /* ViewController.m in Sources */,
+				C462A7971DC2034A00306DE5 /* FifthCommand.m in Sources */,
+				C462A7981DC2034A00306DE5 /* FirstCommand.m in Sources */,
+				C462A79B1DC2034A00306DE5 /* SecondCommand.m in Sources */,
+				C462A79F1DC2035300306DE5 /* MultibleCommandForTest.m in Sources */,
+				C462A7A21DC2036100306DE5 /* TestAwesomeResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
