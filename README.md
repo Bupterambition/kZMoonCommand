@@ -253,7 +253,18 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 }
 
 ```
+## Tips
+You can run a script to install AwesomeCommand Template
 
+
+![](https://github.com/Bupterambition/Kiwi-Template/blob/master/template.jpeg?raw=true)
+
+
+```
+sudo chmod 755 install-templates.sh
+
+sudo sh install-templates.sh 
+```
 ## Author
 senmiao, bupterambition@gmail.com
 ## Issue
@@ -728,6 +739,17 @@ AwesomeCommand的驱动是依靠`RACSignal`，但是除了复杂的场景外—�
 | [leichunfeng/MVVMReactiveCocoa](https://github.com/leichunfeng/MVVMReactiveCocoa)| **推荐！一个完整的使用MVVM和RAC的Github客户端，leichunfeng大师作品。**|
 |[ashfurrow / FunctionalReactivePixels](https://github.com/ashfurrow/FunctionalReactivePixels)|演示使用500px的API来使用FRP与ReactiveCocoa在iOS的环境。|
 
+
+## Tips
+为了方便构建AwesomeCommand的子类，你可以通过使用下面的脚本建立一个AwesomeComand的模版
+
+![](https://github.com/Bupterambition/Kiwi-Template/blob/master/template.jpeg?raw=true)
+
+```
+sudo chmod 755 install-templates.sh
+
+sudo sh install-templates.sh 
+```
 
 ## Author
 senmiao, senmiao@meili-inc.com,
