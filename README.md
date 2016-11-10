@@ -26,7 +26,7 @@ kZMoonCommand is inspired **ReactiveCocoa** . As your App grows, your code will 
 	
 ## （3）Core Class
 
-[AwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/AwesomeCommand.m)
+[kZMoonCommand](https://github.com/Bupterambition/kZMoonCommand/blob/master/kZMoonCommand/Classes/kZMoonCommand.m)
 
 Base Class of kZMoonCommand.It offers a variety of ways to call without the knowledge of ReactiveCocoa.
 
@@ -40,9 +40,9 @@ kZMoonCommand is an atomic base class offerring a lots of method .
 
 ```objc
 // RequestCommand.h
-#import <kZMoonCommand/AwesomeCommand.h>
+#import <kZMoonCommand/kZMoonCommand.h>
 
-@interface RequestCommand : AwesomeCommand
+@interface RequestCommand : kZMoonCommand
 @property (nonatomic, copy) NSDictionary *param;
 @end
 ```
@@ -51,7 +51,7 @@ kZMoonCommand is an atomic base class offerring a lots of method .
 // RequestCommand.m
 
 #import "RequestCommand.h"
-#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -93,7 +93,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```
 ```objc
-//the way of Callback object，awesomecommand won't retain callback object，so the callback object should be managed by caller.
+//the way of Callback object，kZMoonCommand won't retain callback object，so the callback object should be managed by caller.
 @Interface AwesomeCallbackViewModel()<AwesomeCallback>
 @property (nonatomic, strong) RequestCommand *requestCMD;
 @end
@@ -120,9 +120,9 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```objc
 //RequestCommand.h
-#import <kZMoonCommand/AwesomeCommand.h>
+#import <kZMoonCommand/kZMoonCommand.h>
 
-@interface RequestCommand : AwesomeCommand
+@interface RequestCommand : kZMoonCommand
 
 @end
 ```
@@ -131,7 +131,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 //RequestCommand.m
 
 #import "RequestCommand.h"
-#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -175,7 +175,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 #### 3. The way of RAC
 Assuming a situation shown below
 <div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Demo.gif" width = "400" height = "300" alt="" />
+<img src="https://github.com/Bupterambition/kZMoonCommand/blob/master/kZMoonCommand/Assets/Demo.gif" width = "400" height = "300" alt="" />
 </div>
 
 Assuming that we have six diffent tasks to Operate,but there is quite a bit of inter-dependence among these tasks.For instance,`3` depends on the completion of `1 and 2`.`0`depends on the completion of`3 and  4`,final output depends on the completion of `0 and 5`.Such a complicated diagram with a traditional logic code to write will certainly be very confusing ,even considering the diffence between each callback thread and excuting thread , the program  will be more complex.
@@ -298,9 +298,9 @@ kZMoonCommand作为一个原子的基类，提供了多种使用方法
 
 ```objc
 // RequestCommand.h
-#import <kZMoonCommand/AwesomeCommand.h>
+#import <kZMoonCommand/kZMoonCommand.h>
 
-@interface RequestCommand : AwesomeCommand
+@interface RequestCommand : kZMoonCommand
 @property (nonatomic, copy) NSDictionary *param;//执行command需要的参数
 @end
 ```
@@ -309,7 +309,7 @@ kZMoonCommand作为一个原子的基类，提供了多种使用方法
 // RequestCommand.m
 
 #import "RequestCommand.h"
-#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -378,9 +378,9 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```objc
 //RequestCommand.h
-#import <kZMoonCommand/AwesomeCommand.h>
+#import <kZMoonCommand/kZMoonCommand.h>
 
-@interface RequestCommand : AwesomeCommand
+@interface RequestCommand : kZMoonCommand
 
 @end
 ```
@@ -389,7 +389,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 //RequestCommand.m
 
 #import "RequestCommand.h"
-#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -433,7 +433,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 #### 3. RAC用法
 假设我们有一个这样的场景
 <div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Assets/Untitled.gif" width = "400" height = "300" alt="" />
+<img src="https://github.com/Bupterambition/kZMoonCommand/blob/master/kZMoonCommand/Assets/Untitled.gif" width = "400" height = "300" alt="" />
 </div>
 
 
@@ -503,7 +503,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 自动cancel功能，我们是在kZMoonCommand的dealloc中进行cancel
 
 ```objc
-//AwesomeCommand.m
+//kZMoonCommand.m
 
 - (void)dealloc {
     [self cancel];
@@ -552,16 +552,16 @@ kZMoonCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 比如说你想写一个在子线程中跑逻辑在主线程中取回调的逻辑
 
 ```objc
-#import <kZMoonCommand/AwesomeCommand.h>
+#import <kZMoonCommand/kZMoonCommand.h>
 
-@interface FirstCommand : AwesomeCommand
+@interface FirstCommand : kZMoonCommand
 
 @end
 
 _________________________________________________________________
 
 #import "FirstCommand.h"
-#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 @implementation FirstCommand
 
 @synthesize excuteQueue = _excuteQueue;
