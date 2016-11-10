@@ -157,3 +157,4 @@ Pods/
 sh
 Example/AwesomeCommand/untitled.sh
 Example/AwesomeCommand/TestDemo/untitled.sh
+*.sh

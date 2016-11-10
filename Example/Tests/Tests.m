@@ -1,6 +1,6 @@
 //
-//  AwesomeCommandTests.m
-//  AwesomeCommandTests
+//  kZMoonCommandTests.m
+//  kZMoonCommandTests
 //
 //  Created by BupterAmbitionwentong on 05/31/2016.
 //  Copyright (c) 2016 wentong. All rights reserved.
