@@ -2,7 +2,7 @@
 //  CompoundCancelable.h
 //  Pods
 //
-//  Created by Senmiao on 9/1/16.
+//  Created by  on 9/1/16.
 //
 //
 

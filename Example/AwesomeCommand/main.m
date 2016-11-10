@@ -2,8 +2,8 @@
 //  main.m
 //  AwesomeCommand
 //
-//  Created by wentong on 05/31/2016.
-//  Copyright (c) 2016 wentong. All rights reserved.
+//  Created by  on 05/31/2016.
+//  Copyright (c) 2016 . All rights reserved.
 //
 
 @import UIKit;

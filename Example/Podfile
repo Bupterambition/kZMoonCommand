@@ -1,11 +1,10 @@
-source 'http://gitlab.mogujie.org/ios-team/cocoapods-official-specs-mirror.git'
-
+source 'https://github.com/cocoapods/specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
 target 'AwesomeCommand_Example' do
-  pod 'AwesomeCommand', :path => '../'
+  pod 'kZMoonCommand', :path => '../'
 end
   target 'AwesomeCommand_Tests' do
-  pod 'AwesomeCommand', :path => '../'
+  pod 'kZMoonCommand', :path => '../'
 end

@@ -2,15 +2,15 @@
 //  ViewController.m
 //  AwesomeCommand
 //
-//  Created by wentong on 05/31/2016.
-//  Copyright (c) 2016 wentong. All rights reserved.
+//  Created by  on 05/31/2016.
+//  Copyright (c) 2016 . All rights reserved.
 //
 
 #import "ViewController.h"
 #import "RequestCommand.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "AwesomeCallbackObject.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 #import <pthread/pthread.h>
 
 #import "FirstCommand.h"

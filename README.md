@@ -1,4 +1,4 @@
-# AwesomeCommand
+# kZMoonCommand
 
 
 <div align=center>
@@ -22,27 +22,27 @@
 
 ## （1）Introduction
 
-AwesomeCommand is inspired **ReactiveCocoa** . As your App grows, your code will lead to an **accumulation** of business logic .After over time, a lot of overlap with the business logic result in confusing code. Based on this requirement, we write a new  command in order to **ignore the confuse thread progress only consider the final result**, so each business logic component can be written as a Signal chain, only need to manage the chain afterwards. At the same time, we do a lot AwesomeCommand **thread optimized** so that execution thread and callback thread completely separated, while ensuring the security thread, so external callers only need to be concerned about the relationship between the business logic does not require threading issues.
+kZMoonCommand is inspired **ReactiveCocoa** . As your App grows, your code will lead to an **accumulation** of business logic .After over time, a lot of overlap with the business logic result in confusing code. Based on this requirement, we write a new  command in order to **ignore the confuse thread progress only consider the final result**, so each business logic component can be written as a Signal chain, only need to manage the chain afterwards. At the same time, we do a lot kZMoonCommand **thread optimized** so that execution thread and callback thread completely separated, while ensuring the security thread, so external callers only need to be concerned about the relationship between the business logic does not require threading issues.
 ##	 （2）Install
-	pod 'AwesomeCommand'
+	pod 'kZMoonCommand'
 	
 ## （3）Core Class
 
 [AwesomeCommand](https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand/Classes/AwesomeCommand.m)
 
-Base Class of AwesomeCommand.It offers a variety of ways to call without the knowledge of ReactiveCocoa.
+Base Class of kZMoonCommand.It offers a variety of ways to call without the knowledge of ReactiveCocoa.
 
 
 ## （4）Usage
 
-AwesomeCommand is an atomic base class offerring a lots of method .
+kZMoonCommand is an atomic base class offerring a lots of method .
 
-#### 1. Base Usage－Inherit AwesomeCommand,Overwrite run method
+#### 1. Base Usage－Inherit kZMoonCommand,Overwrite run method
 
 
 ```objc
 // RequestCommand.h
-#import <AwesomeCommand/AwesomeCommand.h>
+#import <kZMoonCommand/AwesomeCommand.h>
 
 @interface RequestCommand : AwesomeCommand
 @property (nonatomic, copy) NSDictionary *param;
@@ -53,7 +53,7 @@ AwesomeCommand is an atomic base class offerring a lots of method .
 // RequestCommand.m
 
 #import "RequestCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -85,7 +85,7 @@ AwesomeCommand is an atomic base class offerring a lots of method .
 @end
 ```
 ```objc
-// the way of Block，Awesomecommand will retain block，so you should manage the life of var in block。
+// the way of Block，kZMoonCommand will retain block，so you should manage the life of var in block。
 requestCMD = [[RequestCommand alloc] init];
 requestCMD.param = @{"bankName":@"CCB"};
 id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<AwesomeExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
@@ -102,13 +102,13 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 @implementation AwesomeCallbackViewModel
 
-- (void)onNext:(AwesomeCommand *)command AndData:(id)data{
+- (void)onNext:(kZMoonCommand *)command AndData:(id)data{
 
 }
-- (void)onComplete:(AwesomeCommand *)command {
+- (void)onComplete:(kZMoonCommand *)command {
 
 }
-- (void)onError:(AwesomeCommand *)command AndError:(NSError *)error {
+- (void)onError:(kZMoonCommand *)command AndError:(NSError *)error {
 
 }
 - (void)executeRequestCMD {
@@ -122,7 +122,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```objc
 //RequestCommand.h
-#import <AwesomeCommand/AwesomeCommand.h>
+#import <kZMoonCommand/AwesomeCommand.h>
 
 @interface RequestCommand : AwesomeCommand
 
@@ -133,7 +133,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 //RequestCommand.m
 
 #import "RequestCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -182,7 +182,7 @@ Assuming a situation shown below
 
 Assuming that we have six diffent tasks to Operate,but there is quite a bit of inter-dependence among these tasks.For instance,`3` depends on the completion of `1 and 2`.`0`depends on the completion of`3 and  4`,final output depends on the completion of `0 and 5`.Such a complicated diagram with a traditional logic code to write will certainly be very confusing ,even considering the diffence between each callback thread and excuting thread , the program  will be more complex.
 
-if you use AwesomeCommand,it should like this:
+if you use kZMoonCommand,it should like this:
 
 ```objc
   RACSignal *signal_0 = [requestCMD createSignal];
@@ -230,7 +230,7 @@ Clone the repo
 
 ## （5）Cancel
 
-As atomic based class, AwesomeCommand should be inherited of subclass,so the subclass is the context by itself.
+As atomic based class, kZMoonCommand should be inherited of subclass,so the subclass is the context by itself.
 
 ##### Manual cancel
 
@@ -246,7 +246,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 ##### Auto cancel
 
 ```objc
-//AwesomeCommand.m
+//kZMoonCommand.m
 
 - (void)dealloc {
     [self cancel];
@@ -254,7 +254,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```
 ## Tips
-You can run a script to install AwesomeCommand Template
+You can run a script to install kZMoonCommand Template
 
 
 ![](https://github.com/Bupterambition/Kiwi-Template/blob/master/template.jpeg?raw=true)
@@ -273,16 +273,16 @@ If you have any issue of this component,please contact me
 
 ## License
 
-AwesomeCommand is available under the MIT license. See the LICENSE file for more info.
+kZMoonCommand is available under the MIT license. See the LICENSE file for more info.
 
 
 ## <a id="中文版"></a>中文版
 
 
 ## （一）组件介绍
-随着业务的发展，越来越多的业务逻辑堆积到一块，日积月累后，很多业务逻辑会交叠在一起，导致后续整理的时候`十分混乱`，基于这个需求，我们重构command组件，整体是基于`ReactiveCocoa`，这样的话不需要考虑调用顺序，只需要知道考虑结果，这样每个业务逻辑可以写成一条Signal链，后续只需要对`链`进行管理就可以。同时，我们对AwesomeCommand的`线程`做了很大优化，使得`执行线程`和`回调线程`完全分离，同时保证了`线程安全`，这样外部调用者就只需要关系业务逻辑`不需要关心线程`问题。
+随着业务的发展，越来越多的业务逻辑堆积到一块，日积月累后，很多业务逻辑会交叠在一起，导致后续整理的时候`十分混乱`，基于这个需求，我们重构command组件，整体是基于`ReactiveCocoa`，这样的话不需要考虑调用顺序，只需要知道考虑结果，这样每个业务逻辑可以写成一条Signal链，后续只需要对`链`进行管理就可以。同时，我们对kZMoonCommand的`线程`做了很大优化，使得`执行线程`和`回调线程`完全分离，同时保证了`线程安全`，这样外部调用者就只需要关系业务逻辑`不需要关心线程`问题。
 ##	 （二）安装
-	pod 'AwesomeCommand'
+	pod 'kZMoonCommand'
 	
 ## （三）Core Class
 
@@ -293,14 +293,14 @@ AwesomeCommand is available under the MIT license. See the LICENSE file for more
 
 
 ## （四）使用姿势
-AwesomeCommand作为一个原子的基类，提供了多种使用方法
+kZMoonCommand作为一个原子的基类，提供了多种使用方法
 
-#### 1. 基本姿势－继承AwesomeCommand,将逻辑写在run方法中
+#### 1. 基本姿势－继承kZMoonCommand,将逻辑写在run方法中
 
 
 ```objc
 // RequestCommand.h
-#import <AwesomeCommand/AwesomeCommand.h>
+#import <kZMoonCommand/AwesomeCommand.h>
 
 @interface RequestCommand : AwesomeCommand
 @property (nonatomic, copy) NSDictionary *param;//执行command需要的参数
@@ -311,7 +311,7 @@ AwesomeCommand作为一个原子的基类，提供了多种使用方法
 // RequestCommand.m
 
 #import "RequestCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -360,13 +360,13 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 @implementation AwesomeCallbackViewModel
 
-- (void)onNext:(AwesomeCommand *)command AndData:(id)data{
+- (void)onNext:(kZMoonCommand *)command AndData:(id)data{
 
 }
-- (void)onComplete:(AwesomeCommand *)command {
+- (void)onComplete:(kZMoonCommand *)command {
 
 }
-- (void)onError:(AwesomeCommand *)command AndError:(NSError *)error {
+- (void)onError:(kZMoonCommand *)command AndError:(NSError *)error {
 
 }
 - (void)executeRequestCMD {
@@ -380,7 +380,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```objc
 //RequestCommand.h
-#import <AwesomeCommand/AwesomeCommand.h>
+#import <kZMoonCommand/AwesomeCommand.h>
 
 @interface RequestCommand : AwesomeCommand
 
@@ -391,7 +391,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 //RequestCommand.m
 
 #import "RequestCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 
 @implementation RequestCommand
 
@@ -441,7 +441,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 有6个操作，但是它们之间的执行顺序是有`依赖`的，比如`3`的执行需要依赖` 1 2完成`后才执行，`0`的执行需要依赖`3 4执行完`，最后的`输出`需要`0和5都执行完毕`，这样一个略显复杂的图如果用传统的逻辑来写的话肯定会组织的非常混乱，如果考虑到每个操作的执行和回调线程可能都是不同的话，那更将加大了复杂度。
 
-但是如果使用AwesomeCommand来写的话，是下面这样子的
+但是如果使用kZMoonCommand来写的话，是下面这样子的
 
 ```objc
   RACSignal *signal_0 = [requestCMD createSignal];
@@ -487,9 +487,9 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ## （五）上下文环境与Cancel
 
-AwesomeCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
+kZMoonCommand作为一个原子基类，在使用时需要将它子类化，所需的Context即是子类的属性，因此子类本身就是一个Context。如果调用方需要检测command的执行情况的话，只需要KVO下executing这个属性。
 
-AwesomeCommand提供了手动Cancel与自动Cancel功能.
+kZMoonCommand提供了手动Cancel与自动Cancel功能.
 ##### 手动cancel
 
 ```objc
@@ -502,7 +502,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 ```
 
 ##### 自动cancel
-自动cancel功能，我们是在AwesomeCommand的dealloc中进行cancel
+自动cancel功能，我们是在kZMoonCommand的dealloc中进行cancel
 
 ```objc
 //AwesomeCommand.m
@@ -518,7 +518,7 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ### 1线程问题
 #### 执行线程与回调线程
-AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并且保证不会出错，在设计时我们将执行线程和回调线程进行分离，具体的做法的作用是通过下面两个函数实现
+kZMoonCommand设计的初衷是让使用者`不用去关心线程`问题，并且保证不会出错，在设计时我们将执行线程和回调线程进行分离，具体的做法的作用是通过下面两个函数实现
 
 ```objc
 - (RACSignal *)deliverOn:(RACScheduler *)scheduler;//将订阅和副作用转移到目标线程
@@ -540,7 +540,7 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 }
 
 ```
-对于回调线程，调用方不需要关心，因为AwesomeCommand会捕获当前执行下面语句时的线程并在有回调时进行返回
+对于回调线程，调用方不需要关心，因为kZMoonCommand会捕获当前执行下面语句时的线程并在有回调时进行返回
 
 ```objc
 - (id<AwesomeCancelable>)executeWithCallback:(id<AwesomeCallback>)callback;
@@ -554,7 +554,7 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 比如说你想写一个在子线程中跑逻辑在主线程中取回调的逻辑
 
 ```objc
-#import <AwesomeCommand/AwesomeCommand.h>
+#import <kZMoonCommand/AwesomeCommand.h>
 
 @interface FirstCommand : AwesomeCommand
 
@@ -563,7 +563,7 @@ AwesomeCommand设计的初衷是让使用者`不用去关心线程`问题，并�
 _________________________________________________________________
 
 #import "FirstCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 @implementation FirstCommand
 
 @synthesize excuteQueue = _excuteQueue;
@@ -608,13 +608,13 @@ _________________________________________________________________
 #### 线程安全问题
 ##### 资源竞争
 
-AwesomeCommand的驱动是依靠RACSignal的，因此我在创建这个驱动Signal的`didSubscribe`中加入`pthread_mutex_t`，在副作用执行时会进行加锁。具体代码如下
+kZMoonCommand的驱动是依靠RACSignal的，因此我在创建这个驱动Signal的`didSubscribe`中加入`pthread_mutex_t`，在副作用执行时会进行加锁。具体代码如下
 
 ```objc
 
 @implementation SignalUtil
 
-+ (RACSignal *)createSignal:(nonnull AwesomeCommand *)command {
++ (RACSignal *)createSignal:(nonnull kZMoonCommand *)command {
     pthread_mutex_t _mutex;
     const int result = pthread_mutex_init(&_mutex, NULL);
     NSCAssert(0 == result, @"Failed to initialize mutex with error %d.", result);
@@ -655,15 +655,15 @@ AwesomeCommand的驱动是依靠RACSignal的，因此我在创建这个驱动Sig
 
 虽然有些文章上说，在不同的队列中使用不同的优先级，但是这会增加并发编程的复杂度和不可预见性。
 
-那么如果你非要在回调时使用不同优先级的话，也是没有问题的，因为awesomecommand里面是设置的`callback Queue`，里面`不会`有大量的读取任务占据着资源，只是起到一个`回调通道`的作用，所以也不存在卡住问题。
+那么如果你非要在回调时使用不同优先级的话，也是没有问题的，因为kZMoonCommand里面是设置的`callback Queue`，里面`不会`有大量的读取任务占据着资源，只是起到一个`回调通道`的作用，所以也不存在卡住问题。
 
 ### 2.RAC使用成本
 
-AwesomeCommand的驱动是依靠`RACSignal`，但是除了复杂的场景外——比如像是多个操作有依赖关系，在使用AwesomeCommand时，RAC相关的都被`封装`起来了，使用方只需要关注业务逻辑就可以。
+kZMoonCommand的驱动是依靠`RACSignal`，但是除了复杂的场景外——比如像是多个操作有依赖关系，在使用kZMoonCommand时，RAC相关的都被`封装`起来了，使用方只需要关注业务逻辑就可以。
 
-但是如果你是RAC的深度用户或是对RAC比较感兴趣的话，将会更加灵活的去使用AwesomeCommand。
+但是如果你是RAC的深度用户或是对RAC比较感兴趣的话，将会更加灵活的去使用kZMoonCommand。
 
-因此AwesomeCommand对于`熟悉或是不熟悉RAC`的同学都可以无差别使用。
+因此kZMoonCommand对于`熟悉或是不熟悉RAC`的同学都可以无差别使用。
 
 ### 3.RAC学习资源
 
@@ -741,7 +741,7 @@ AwesomeCommand的驱动是依靠`RACSignal`，但是除了复杂的场景外—�
 
 
 ## Tips
-为了方便构建AwesomeCommand的子类，你可以通过使用下面的脚本建立一个AwesomeComand的模版
+为了方便构建kZMoonCommand的子类，你可以通过使用下面的脚本建立一个AwesomeComand的模版
 
 ![](https://github.com/Bupterambition/Kiwi-Template/blob/master/template.jpeg?raw=true)
 
@@ -759,5 +759,5 @@ senmiao, senmiao@meili-inc.com,
 
 ## License
 
-AwesomeCommand is available under the MIT license. See the LICENSE file for more info.
+kZMoonCommand is available under the MIT license. See the LICENSE file for more info.
 
