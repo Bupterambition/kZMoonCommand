@@ -2,12 +2,12 @@
 //  FifthCommand.m
 //  AwesomeCommand
 //
-//  Created by  on 16/8/15.
+//  Created by BupterAmbition on 16/8/15.
 //  Copyright © 2016年 . All rights reserved.
 //
 
 #import "FifthCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "TestAwesomeResult.h"
 @implementation FifthCommand {

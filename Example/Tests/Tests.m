@@ -2,7 +2,7 @@
 //  AwesomeCommandTests.m
 //  AwesomeCommandTests
 //
-//  Created by wentong on 05/31/2016.
+//  Created by BupterAmbitionwentong on 05/31/2016.
 //  Copyright (c) 2016 wentong. All rights reserved.
 //
 

@@ -2,12 +2,12 @@
 //  SecondCommand.m
 //  AwesomeCommand
 //
-//  Created by  on 16/8/15.
+//  Created by BupterAmbition on 16/8/15.
 //  Copyright © 2016年 . All rights reserved.
 //
 
 #import "SecondCommand.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 @implementation SecondCommand
 - (id<AwesomeCancelable>)run:(id<AwesomeResult>)result {
     NSLog(@"开始执行 Command 2");

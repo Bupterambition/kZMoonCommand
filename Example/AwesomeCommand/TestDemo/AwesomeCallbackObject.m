@@ -2,12 +2,12 @@
 //  AwesomeCallbackObject.m
 //  AwesomeCommand
 //
-//  Created by  on 16/8/15.
+//  Created by BupterAmbition on 16/8/15.
 //  Copyright © 2016年 . All rights reserved.
 //
 
 #import "AwesomeCallbackObject.h"
-#import <AwesomeCommand/AwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/AwesomeCommandPublicHeader.h>
 
 @implementation AwesomeCallbackObject
 - (void)onNext:(AwesomeCommand *)command AndData:(id)data {

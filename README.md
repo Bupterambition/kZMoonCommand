@@ -1,9 +1,7 @@
 # kZMoonCommand
 
 
-<div align=center>
-<img src="https://github.com/Bupterambition/AwesomeCommand/blob/master/AwesomeCommand.png" width = "1200" height = "450" alt="" />
-</div>
+
 
 [![CI Status](http://img.shields.io/travis/wentong/AwesomeCommand.svg?style=flat)](https://travis-ci.org/wentong/AwesomeCommand)
 [![Version](https://img.shields.io/cocoapods/v/AwesomeCommand.svg?style=flat)](http://cocoapods.org/pods/AwesomeCommand)
