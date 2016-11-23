@@ -11,16 +11,17 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-#import "kZMoonCommandPublicDefine.h"
-#import "kZMoonCallback.h"
-#import "kZMoonCancelable.h"
-#import "kZMoonCommand.h"
-#import "kZMoonCommand+ExecQueue.h"
-#import "kZMoonExecutable.h"
-#import "SignalUtil.h"
-#import "Signalable.h"
-#import "kZMoonResult.h"
-#import "BlockCancelable.h"
-#import "CompoundCancelable.h"
+#import <kZMoonCommand/kZMoonCommandPublicDefine.h>
+#import <kZMoonCommand/kZMoonCallback.h>
+#import <kZMoonCommand/kZMoonCancelable.h>
+#import <kZMoonCommand/kZMoonCommand.h>
+#import <kZMoonCommand/kZMoonCommand+ExecQueue.h>
+#import <kZMoonCommand/kZMoonExecutable.h>
+#import <kZMoonCommand/SignalUtil.h>
+#import <kZMoonCommand/Signalable.h>
+#import <kZMoonCommand/kZMoonResult.h>
+#import <kZMoonCommand/BlockCancelable.h>
+#import <kZMoonCommand/CompoundCancelable.h>
+#import <kZMoonCommand/kZMoonCommand+Bind.h>
 
 #endif

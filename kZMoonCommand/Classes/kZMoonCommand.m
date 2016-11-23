@@ -61,7 +61,7 @@
     return [self _executeWithCallback:nil andBlock:callbackBlock];
 }
 
-- (id<kZMoonCancelable>)_executeWithCallback:(id<kZMoonCallback>)callback andBlock:(kZMoonExcuteCallbaclBlock)callbackBlock NS_REQUIRES_SUPER {
+- (id<kZMoonCancelable>)_executeWithCallback:(id<kZMoonCallback>)callback andBlock:(kZMoonExcuteCallbaclBlock)callbackBlock  {
     if (callback) {
         NSCParameterAssert([callback conformsToProtocol:@protocol(kZMoonCallback)]);
     }

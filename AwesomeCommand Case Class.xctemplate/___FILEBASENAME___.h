@@ -6,9 +6,9 @@
 //___COPYRIGHT___
 //
 
-#import <AwesomeCommand/MGJAwesomeCommandPublicHeader.h>
+#import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 
 
-@interface ___FILEBASENAMEASIDENTIFIER___ : MGJAwesomeCommand
+@interface ___FILEBASENAMEASIDENTIFIER___ : kZMoonCommand
 
 @end

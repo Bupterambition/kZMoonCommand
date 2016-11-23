@@ -38,13 +38,15 @@
     FifthCommand *fifthCMD;
     id<kZMoonCallback> callback;
     MultibleCommandForTest *multiCMD;
+    id <kZMoonCommand> bindCmd;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self testForCombine];//测试复杂绑定
 //    [self testRequestCMD];  //测试excute执行
 //    [self testRequestCMDwithSignal];//测试signal执行
-    [self testMutilThread];//测试多线程安全
+//    [self testMutilThread];//测试多线程安全
+    [self bindOperation];//Command串联操作
 
 }
 
@@ -203,5 +205,20 @@ void ticketSellor(NSUInteger sellorIndex){
     NSLog(@"final value is:______%ld______", [x integerValue]);
   }];
 }
+
+#pragma mark - Bind Operation
+
+- (void)bindOperation {
+    requestCMD = [[RequestCommand alloc] init];
+    //warning:需要返回值需要被持有
+    bindCmd = [requestCMD bind:^kZMoonCommand * _Nullable(NSUInteger index, id<kZMoonCommand>  _Nonnull cmd, id  _Nonnull data, NSError * _Nonnull error, BOOL isCompleted) {
+        fifthCMD = [[FifthCommand alloc] init];
+        return fifthCMD;
+    }];
+    [bindCmd executeWithBlock:^(id<kZMoonExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+        
+    }];
+}
+
 @end
 #pragma clang diagnostic pop

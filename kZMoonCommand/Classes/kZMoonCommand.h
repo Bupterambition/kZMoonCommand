@@ -22,6 +22,6 @@ typedef id<kZMoonCancelable> (^kZMoonExcuteBlock)(id<kZMoonResult> result);
 @end
 
 // user should override - (id<kZMoonCancelable>)run:(id<kZMoonResult>)result;
-@interface kZMoonCommand : NSObject <kZMoonCommand>
+@interface kZMoonCommand<ReturnObjectType> : NSObject <kZMoonCommand>
 
 @end

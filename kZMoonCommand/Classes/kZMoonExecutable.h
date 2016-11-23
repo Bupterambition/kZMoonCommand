@@ -17,7 +17,7 @@ typedef void (^kZMoonExcuteCallbaclBlock)(id<kZMoonExecutable> cmd, id data, NSE
 
 @property (nonatomic, assign, readonly) BOOL executing;
 
-- (id<kZMoonCancelable>)executeWithCallback:(id<kZMoonCallback>)callback NS_REQUIRES_SUPER;
-- (id<kZMoonCancelable>)executeWithBlock:(kZMoonExcuteCallbaclBlock)callbackBlock NS_REQUIRES_SUPER;
+- (id<kZMoonCancelable>)executeWithCallback:(id<kZMoonCallback>)callback;
+- (id<kZMoonCancelable>)executeWithBlock:(kZMoonExcuteCallbaclBlock)callbackBlock;
 
 @end

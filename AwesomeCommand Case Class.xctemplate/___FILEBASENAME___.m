@@ -19,7 +19,7 @@
     return self;
 }
 
-- (id<MGJAwesomeCancelable>)run:(id<MGJAwesomeResult>)result {
+- (id<kZMoonCancelable>)run:(id<kZMoonResult>)result {
     //Do your main code here,then call [result next:respose] to transfer the reponse , finally you should call [result onComplete]
     
 }

@@ -479,7 +479,23 @@ id<AwesomeCancelable> cancelObject_two = [requestCMD executeWithBlock:^(id<Aweso
 
 ```
 
-#### 4. 更多案例
+####4. Command+Operation
+Command之间的串联操作，使用姿式如下
+
+```Objc
+
+requestCMD = [[RequestCommand alloc] init];
+    bindCmd = [requestCMD bind:^kZMoonCommand * _Nullable(NSUInteger index, id<kZMoonCommand>  _Nonnull cmd, id  _Nonnull data, NSError * _Nonnull error, BOOL isCompleted) {
+        fifthCMD = [[FifthCommand alloc] init];
+        return fifthCMD;
+    }];
+    [bindCmd executeWithBlock:^(id<kZMoonExecutable> cmd, id data, NSError *error, BOOL isCompleted) {
+        
+    }];
+
+```
+
+#### 5. 更多案例
 
 请查看工程中案例
 
