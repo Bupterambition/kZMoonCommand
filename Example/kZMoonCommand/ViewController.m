@@ -42,11 +42,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self testForCombine];//测试复杂绑定
+    [self testForCombine];//测试复杂绑定
 //    [self testRequestCMD];  //测试excute执行
 //    [self testRequestCMDwithSignal];//测试signal执行
 //    [self testMutilThread];//测试多线程安全
-    [self bindOperation];//Command串联操作
+//    [self bindOperation];//Command串联操作
 
 }
 
@@ -194,9 +194,9 @@ void ticketSellor(NSUInteger sellorIndex){
   RACSignal *then3R_4 = [combine3_R then:^RACSignal * {
     return signal_4;
   }];
-  [then3R_4 subscribeNext:^(id x) {
-    NSLog(@"回调 Command 4");
-  }];
+//  [then3R_4 subscribeNext:^(id x) {
+//    NSLog(@"回调 Command 4");
+//  }];
 
   [[RACSignal combineLatest:@[ then3R_4, signal_5 ]
                      reduce:^id(NSNumber *num1, NSNumber *num2) {
