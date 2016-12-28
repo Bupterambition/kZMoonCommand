@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10CD12A67274044F3BB668A4 /* Pods_kZMoonCommand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AADCB616D9AC5BC218148D6 /* Pods_kZMoonCommand.framework */; };
-		C34BDF89007842CE791B549C /* Pods_kZMoonCommandTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDF7E2DBAC7B0F6885E1BB1 /* Pods_kZMoonCommandTests.framework */; };
+		6EB5F8C960EBD22C01ADA99E /* libPods-kZMoonCommand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACB47BE12A7B9D4BBCE22D3 /* libPods-kZMoonCommand.a */; };
+		78B2BE7497A48E228D687F20 /* libPods-kZMoonCommandTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF927AB5AB3B6854D40057A0 /* libPods-kZMoonCommandTests.a */; };
 		C4507ECC1DD4B2F700D5E9C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4507ECB1DD4B2F700D5E9C2 /* main.m */; };
 		C4507ECF1DD4B2F700D5E9C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4507ECE1DD4B2F700D5E9C2 /* AppDelegate.m */; };
 		C4507ED21DD4B2F700D5E9C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4507ED11DD4B2F700D5E9C2 /* ViewController.m */; };
@@ -38,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AADCB616D9AC5BC218148D6 /* Pods_kZMoonCommand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kZMoonCommand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E7BA00087C2BAE50A014B5 /* Pods-kZMoonCommand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kZMoonCommand.release.xcconfig"; path = "Pods/Target Support Files/Pods-kZMoonCommand/Pods-kZMoonCommand.release.xcconfig"; sourceTree = "<group>"; };
 		8E3DC946B33B8FC442734FA5 /* Pods-kZMoonCommandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kZMoonCommandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kZMoonCommandTests/Pods-kZMoonCommandTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF927AB5AB3B6854D40057A0 /* libPods-kZMoonCommandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kZMoonCommandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4507EC71DD4B2F700D5E9C2 /* kZMoonCommand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kZMoonCommand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4507ECB1DD4B2F700D5E9C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4507ECD1DD4B2F700D5E9C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		C48BADF81DD4BF9E0007BF81 /* ThirdCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdCommand.h; path = TestDemo/ThirdCommand.h; sourceTree = "<group>"; };
 		C48BADF91DD4BF9E0007BF81 /* ThirdCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdCommand.m; path = TestDemo/ThirdCommand.m; sourceTree = "<group>"; };
 		C63D3BB9CF7909A0B4DC98A2 /* Pods-kZMoonCommand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kZMoonCommand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kZMoonCommand/Pods-kZMoonCommand.debug.xcconfig"; sourceTree = "<group>"; };
-		DBDF7E2DBAC7B0F6885E1BB1 /* Pods_kZMoonCommandTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kZMoonCommandTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACB47BE12A7B9D4BBCE22D3 /* libPods-kZMoonCommand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kZMoonCommand.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2143C433F820427B6D149EE /* Pods-kZMoonCommandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kZMoonCommandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kZMoonCommandTests/Pods-kZMoonCommandTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10CD12A67274044F3BB668A4 /* Pods_kZMoonCommand.framework in Frameworks */,
+				6EB5F8C960EBD22C01ADA99E /* libPods-kZMoonCommand.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34BDF89007842CE791B549C /* Pods_kZMoonCommandTests.framework in Frameworks */,
+				78B2BE7497A48E228D687F20 /* libPods-kZMoonCommandTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 		7502FB616D018E8319372DE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0AADCB616D9AC5BC218148D6 /* Pods_kZMoonCommand.framework */,
-				DBDF7E2DBAC7B0F6885E1BB1 /* Pods_kZMoonCommandTests.framework */,
+				CACB47BE12A7B9D4BBCE22D3 /* libPods-kZMoonCommand.a */,
+				BF927AB5AB3B6854D40057A0 /* libPods-kZMoonCommandTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		570C9E204D18F2A7BFD2677A /* [CP] Embed Pods Frameworks */ = {
@@ -387,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,7 +1,6 @@
 source 'https://github.com/cocoapods/specs.git'
 platform :ios, '8.0'
 
-use_frameworks!
 target 'kZMoonCommand' do
   pod 'kZMoonCommand', :path => '../'
 end

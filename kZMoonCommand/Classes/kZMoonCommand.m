@@ -3,7 +3,7 @@
 //
 
 #import "kZMoonCommand.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "SignalUtil.h"
 #import "kZMoonResult.h"
 #import "kZMoonCallback.h"

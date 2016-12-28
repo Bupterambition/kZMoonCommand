@@ -8,7 +8,7 @@
 
 #import "FifthCommand.h"
 #import <kZMoonCommand/kZMoonCommandPublicHeader.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "TestAwesomeResult.h"
 @implementation FifthCommand {
     TestkZMoonResult *kZMoonResult;

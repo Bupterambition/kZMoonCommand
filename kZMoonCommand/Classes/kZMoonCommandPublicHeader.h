@@ -9,7 +9,7 @@
 #ifndef kZMoonCommandPublicHeader_h
 #define kZMoonCommandPublicHeader_h
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 #import <kZMoonCommand/kZMoonCommandPublicDefine.h>
 #import <kZMoonCommand/kZMoonCallback.h>

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "kZMoonCallbackObject.h"
 #import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 #import <pthread/pthread.h>

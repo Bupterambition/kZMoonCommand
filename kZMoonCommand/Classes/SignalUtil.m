@@ -6,7 +6,7 @@
 #import "kZMoonCommand.h"
 #import "kZMoonResult.h"
 #import "kZMoonCancelable.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import <pthread/pthread.h>
 
 @interface kZMoonEasyResultImpl : NSObject <kZMoonEasyResult>

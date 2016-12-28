@@ -9,7 +9,7 @@
 #import "kZMoonBindCommand.h"
 #import "kZMoonCommand+Bind.h"
 #import "kZMoonCommandPublicHeader.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface kZMoonBindCommand ()
 @property (nonatomic, strong) kZMoonCommand *firstCommand;

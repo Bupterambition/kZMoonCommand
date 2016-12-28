@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <kZMoonCommand/kZMoonResult.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 @interface TestkZMoonResult : NSObject<kZMoonResult>
 + (instancetype)resultWithSubscriber:(id<RACSubscriber>)subscriber;
 - (instancetype)initWithSubscriber:(id<RACSubscriber>)subscriber;
