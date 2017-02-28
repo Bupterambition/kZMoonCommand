@@ -48,14 +48,23 @@
             for (NSUInteger index = 0; index < bindBlocks.count; index ++) {
                 KzMoonBindBlock block = [bindBlocks[index] copy];
                 if (block) {
-                    eachSignal = [[eachSignal doNext:^(id x) {
+                    eachSignal = [[[eachSignal doNext:^(id x) {
                         nextCommand = block(index,self.commandArray.lastObject,x,nil,NO);
                         if (nextCommand) {
                             [self.commandArray addObject:nextCommand];
                             nextSignal = [nextCommand createSignal];
                         }
-                    }] then:^RACSignal *{
+                    }] catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
+                        nextCommand = block(index,self.commandArray.lastObject,nil,error,NO);
+                        if (nextCommand) {
+                            [self.commandArray addObject:nextCommand];
+                            nextSignal = [nextCommand createSignal];
+                        }else {
+                            nextSignal = [RACSignal error:error];
+                        }
                         return nextSignal;
+                    }] then:^RACSignal *{
+                        return nextSignal?:[RACSignal empty];
                     }];
                 }
             }
