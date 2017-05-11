@@ -36,6 +36,8 @@
 @synthesize executing = _executing;
 @synthesize executionSignals = _executionSignals;
 @synthesize addedExecutionSignalsSubject = _addedExecutionSignalsSubject;
+@synthesize cancelable = _cancelable;
+@synthesize canceled = _canceled;
 #pragma mark - @protocol kZMooncommandProtocol
 @synthesize callbackQueue = _callbackQueue;
 @synthesize excuteQueue = _excuteQueue;

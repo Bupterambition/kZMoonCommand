@@ -8,7 +8,9 @@
 
 #import <kZMoonCommand/kZMoonCommand.h>
 
-
+NS_ASSUME_NONNULL_BEGIN
 @interface kZMoonBindCommand : kZMoonCommand
 - (instancetype)initWithCommand:(kZMoonBindCommand *)command ;
 @end
+
+NS_ASSUME_NONNULL_END

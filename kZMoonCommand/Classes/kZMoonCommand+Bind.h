@@ -9,7 +9,7 @@
 #import <kZMoonCommand/kZMoonCommand.h>
 NS_ASSUME_NONNULL_BEGIN
 @interface kZMoonCommand (Bind)
-typedef  kZMoonCommand * _Nullable (^KzMoonBindBlock)(NSUInteger index,id<kZMoonCommand> cmd, id data, NSError *error, BOOL isCompleted);
+typedef  kZMoonCommand * _Nullable (^KzMoonBindBlock)(NSUInteger index,id<kZMoonCommand> cmd,_Nullable id data,  NSError * _Nullable error, BOOL isCompleted);
 /**
  *  Command Bind Operation
  *

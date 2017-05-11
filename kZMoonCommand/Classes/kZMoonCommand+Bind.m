@@ -36,7 +36,7 @@ const char * BlockArray = "KzMoonCommandPrivateArray";
     }
     [self.bindBlockArray addObject:[bindBlock copy]];
     if (![self isMemberOfClass:[kZMoonBindCommand class]]) {
-        kZMoonBindCommand *bind = [[kZMoonBindCommand alloc] initWithCommand:self];
+        kZMoonBindCommand *bind = [[kZMoonBindCommand alloc] initWithCommand:(kZMoonBindCommand *)self];
         bind.bindBlockArray = [self.bindBlockArray mutableCopy];
         return bind;
     }

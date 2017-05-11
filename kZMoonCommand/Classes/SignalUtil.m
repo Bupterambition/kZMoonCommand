@@ -100,13 +100,15 @@
     RACSignal *racSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(command);
         if (command && [command respondsToSelector:@selector(run:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types-discards-qualifiers"
             pthread_mutex_lock(&_mutex);
-            
             id<kZMoonResult> result = [kZMoonResultImpl resultWithSubscriber:subscriber];
             [command setValue:@(YES) forKey:@"Executing"];
             id<kZMoonCancelable> cancelable = [command run:result];
             
             pthread_mutex_unlock(&_mutex);
+#pragma clang diagnostic pop
             if (cancelable) {
                 return [RACDisposable disposableWithBlock:^{
                     [cancelable cancel];
