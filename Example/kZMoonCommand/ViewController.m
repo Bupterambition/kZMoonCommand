@@ -6,8 +6,12 @@
 //  Copyright (c) 2016 . All rights reserved.
 //
 
-#import "ViewController.h"
+#if __has_include(<ReactiveObjC/ReactiveObjC.h>)
 #import <ReactiveObjC/ReactiveObjC.h>
+#elif __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#endif
+#import "ViewController.h"
 #import "kZMoonCallbackObject.h"
 #import <kZMoonCommand/kZMoonCommandPublicHeader.h>
 #import <pthread/pthread.h>

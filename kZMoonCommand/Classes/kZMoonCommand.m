@@ -1,9 +1,12 @@
 //
 // Created by BupterAmbition on 16/5/31.
 //
-
-#import "kZMoonCommand.h"
+#if __has_include(<ReactiveObjC/ReactiveObjC.h>)
 #import <ReactiveObjC/ReactiveObjC.h>
+#elif __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#endif
+#import "kZMoonCommand.h"
 #import "SignalUtil.h"
 #import "kZMoonResult.h"
 #import "kZMoonCallback.h"
