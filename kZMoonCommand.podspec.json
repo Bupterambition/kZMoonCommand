@@ -20,8 +20,8 @@
     },
     "source_files": "kZMoonCommand/Classes/**/*",
     "dependencies": {
-        "ReactiveCocoa": [
-            "2.5"
+        "ReactiveObjC": [
+            "3.0.0"
         ]
     }
 }
