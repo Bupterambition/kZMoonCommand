@@ -10,8 +10,6 @@
 #import "kZMoonBindCommand.h"
 #import <objc/runtime.h>
 
-const char * BlockArray = "KzMoonCommandPrivateArray";
-
 @interface kZMoonCommand (private)
 @property (nonatomic, strong) NSMutableArray <KzMoonBindBlock> *bindBlockArray;
 @end
@@ -19,11 +17,11 @@ const char * BlockArray = "KzMoonCommandPrivateArray";
 @implementation kZMoonCommand(private)
 
 - (NSMutableArray *)bindBlockArray {
-    return objc_getAssociatedObject(self, BlockArray);
+    return objc_getAssociatedObject(self, "KzMoonCommandPrivateArray");
 }
 
 - (void)setBindBlockArray:(NSMutableArray<KzMoonBindBlock> *)bindBlockArray {
-    objc_setAssociatedObject(self, BlockArray, bindBlockArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, "KzMoonCommandPrivateArray", bindBlockArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
